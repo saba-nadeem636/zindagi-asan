@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Provider Bookings | Zindagi Asan</title>
+
+
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+<style>
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f7fc;
+}
+
+.container{
+    display:flex;
+}
+
+/* Sidebar */
+
+.sidebar{
+    width:250px;
+    height:100vh;
+    background:#2a9085;
+    color:#fff;
+    position:fixed;
+    left:0;
+    top:0;
+}
+
+.sidebar h2{
+    text-align:center;
+    padding:25px;
+    border-bottom:1px solid rgba(255,255,255,.2);
+}
+
+.sidebar ul{
+    list-style:none;
+    margin-top:20px;
+}
+
+.sidebar ul li{
+    margin:8px 15px;
+}
+
+.sidebar ul li a{
+    color:#fff;
+    text-decoration:none;
+    display:block;
+    padding:14px;
+    border-radius:8px;
+    transition:.3s;
+}
+
+.sidebar ul li.active a,
+.sidebar ul li a:hover{
+    background:#fff;
+    color:#2a9085;
+}
+
+.sidebar i{
+    margin-right:10px;
+}
+
+/* Main Content */
+
+.main-content{
+    margin-left:250px;
+    width:100%;
+    padding:30px;
+}
+
+.top-bar{
+    margin-bottom:30px;
+}
+
+.top-bar h1{
+    color:#2a9085;
+}
+
+/* Booking Card */
+
+.booking-card{
+    background:#fff;
+    border-radius:15px;
+    padding:25px;
+    margin-bottom:25px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.booking-header{
+    display:flex;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.booking-header img{
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    object-fit:cover;
+    margin-right:20px;
+}
+
+.booking-header h2{
+    color:#2a9085;
+    margin-bottom:5px;
+}
+
+.booking-header p{
+    color:#666;
+}
+
+.booking-details p{
+    margin:10px 0;
+    color:#555;
+}
+/* Status */
+
+.status{
+    padding:6px 15px;
+    border-radius:20px;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.pending{
+    background:#fff3cd;
+    color:#856404;
+}
+
+.accepted{
+    background:#d4edda;
+    color:#155724;
+}
+
+.rejected{
+    background:#f8d7da;
+    color:#721c24;
+}
+
+.completed{
+    background:#d1ecf1;
+    color:#0c5460;
+}
+
+/* Buttons */
+
+.buttons{
+    margin-top:20px;
+    display:flex;
+    gap:15px;
+}
+
+.buttons button{
+    border:none;
+    padding:12px 22px;
+    border-radius:8px;
+    cursor:pointer;
+    color:#fff;
+    font-size:15px;
+    transition:0.3s;
+}
+
+.accept-btn{
+    background:#28a745;
+}
+
+.accept-btn:hover{
+    background:#218838;
+}
+
+.reject-btn{
+    background:#dc3545;
+}
+
+.reject-btn:hover{
+    background:#c82333;
+}
+
+.complete-btn{
+    background:#007bff;
+}
+
+.complete-btn:hover{
+    background:#0056b3;
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+.sidebar{
+    width:220px;
+}
+
+.main-content{
+    margin-left:220px;
+    padding:20px;
+}
+
+.buttons{
+    flex-direction:column;
+}
+
+.buttons button{
+    width:100%;
+}
+
+}
+
+@media(max-width:768px){
+
+.container{
+    flex-direction:column;
+}
+
+.sidebar{
+    position:relative;
+    width:100%;
+    height:auto;
+}
+
+.main-content{
+    margin-left:0;
+}
+
+.booking-header{
+    flex-direction:column;
+    text-align:center;
+}
+
+.booking-header img{
+    margin:0 0 15px;
+}
+
+}
+</style>
+<div class="container">
+
+    <!-- Sidebar -->
+
+    <div class="sidebar">
+
+        <h2>Zindagi <span style="color: #FFD54F;">Asan</span></h2>
+
+        <ul>
+
+            <li>
+                <a href="provider-dashboard.html">
+                    <i class="fas fa-home"></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="provider-profile.html">
+                    <i class="fas fa-user"></i>
+                    My Profile
+                </a>
+            </li>
+
+            <li class="active">
+                <a href="provider-bookings.html">
+                    <i class="fas fa-calendar-check"></i>
+                    Bookings
+                </a>
+            </li>
+
+            <li>
+                <a href="provider earnings.html">
+                    <i class="fas fa-wallet"></i>
+                    Earnings
+                </a>
+            </li>
+
+            <li>
+                <a href="provider-reviews.html">
+                    <i class="fas fa-star"></i>
+                    Reviews
+                </a>
+            </li>
+
+            <li>
+                <a href="provider-setting.html">
+                    <i class="fas fa-cog"></i>
+                    Settings
+                </a>
+           
+
+        </ul>
+
+    </div>
+
+    <!-- Main Content -->
+
+    <div class="main-content">
+
+        <div class="top-bar">
+
+            <h1>My Bookings</h1>
+
+        </div>
+
+        <!-- Booking Card 1 -->
+
+        <div class="booking-card">
+
+            <div class="booking-header">
+
+                <img src="https://randomuser.me/api/portraits/women/44.jpg">
+
+                <div>
+
+                    <h2>Saba Nadeem</h2>
+
+                    <p>Tailoring Service</p>
+
+                </div>
+
+            </div>
+
+            <div class="booking-details">
+
+                <p><strong>Booking Date:</strong> 15 July 2026</p>
+
+                <p><strong>Time:</strong> 11:00 AM</p>
+
+                <p><strong>Address:</strong> Gulshan-e-Iqbal, Karachi</p>
+
+                <p><strong>Phone:</strong> 03XX-XXXXXXX</p>
+
+                <p><strong>Price:</strong> Rs.2500</p>
+
+                <p>
+                    <strong>Status:</strong>
+
+                    <span class="status pending">
+                        Pending
+                    </span>
+
+                </p>
+
+            </div>
+
+            <div class="buttons">
+
+                <button class="accept-btn">
+                    Accept
+                </button>
+
+                <button class="reject-btn">
+                    Reject
+                </button>
+
+                <button class="complete-btn">
+                    Complete
+                </button>
+
+            </div>
+
+        </div>
+                <!-- Booking Card 2 -->
+
+        <div class="booking-card">
+
+            <div class="booking-header">
+
+                <img src="https://randomuser.me/api/portraits/men/35.jpg" alt="Customer">
+
+                <div>
+
+                    <h2>Ahmed Khan</h2>
+
+                    <p>Tailoring Service</p>
+
+                </div>
+
+            </div>
+
+            <div class="booking-details">
+
+                <p><strong>Booking Date:</strong> 16 July 2026</p>
+
+                <p><strong>Time:</strong> 02:30 PM</p>
+
+                <p><strong>Address:</strong> North Nazimabad, Karachi</p>
+
+                <p><strong>Phone:</strong> 03XX-XXXXXXX</p>
+
+                <p><strong>Price:</strong> Rs.1800</p>
+
+                <p>
+
+                    <strong>Status:</strong>
+
+                    <span class="status accepted">
+                        Accepted
+                    </span>
+
+                </p>
+
+            </div>
+
+            <div class="buttons">
+
+                <button class="accept-btn">
+                    Accept
+                </button>
+
+                <button class="reject-btn">
+                    Reject
+                </button>
+
+                <button class="complete-btn">
+                    Complete
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- Booking Card 3 -->
+
+        <div class="booking-card">
+
+            <div class="booking-header">
+
+                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Customer">
+
+                <div>
+
+                    <h2>Sarah Ali</h2>
+
+                    <p>Tailoring Service</p>
+
+                </div>
+
+            </div>
+
+            <div class="booking-details">
+
+                <p><strong>Booking Date:</strong> 18 July 2026</p>
+
+                <p><strong>Time:</strong> 09:00 AM</p>
+
+                <p><strong>Address:</strong> DHA Phase 6, Karachi</p>
+
+                <p><strong>Phone:</strong> 03XX-XXXXXXX</p>
+
+                <p><strong>Price:</strong> Rs.3200</p>
+
+                <p>
+
+                    <strong>Status:</strong>
+
+                    <span class="status completed">
+                        Completed
+                    </span>
+
+                </p>
+
+            </div>
+
+            <div class="buttons">
+
+                <button class="accept-btn">
+                    Accept
+                </button>
+
+                <button class="reject-btn">
+                    Reject
+                </button>
+
+                <button class="complete-btn">
+                    Complete
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+// ===============================
+// Provider Bookings JavaScript
+// ===============================
+
+// Accept Button
+
+const acceptButtons = document.querySelectorAll(".accept-btn");
+
+acceptButtons.forEach(function(button){
+
+    button.addEventListener("click", function(){
+
+        const card = this.closest(".booking-card");
+
+        const status = card.querySelector(".status");
+
+        status.innerHTML = "Accepted";
+
+        status.className = "status accepted";
+
+        alert("Booking Accepted Successfully!");
+
+    });
+
+});
+
+
+// Reject Button
+
+const rejectButtons = document.querySelectorAll(".reject-btn");
+
+rejectButtons.forEach(function(button){
+
+    button.addEventListener("click", function(){
+
+        const card = this.closest(".booking-card");
+
+        const status = card.querySelector(".status");
+
+        status.innerHTML = "Rejected";
+
+        status.className = "status rejected";
+
+        alert("Booking Rejected!");
+
+    });
+
+});
+
+
+// Complete Button
+
+const completeButtons = document.querySelectorAll(".complete-btn");
+
+completeButtons.forEach(function(button){
+
+    button.addEventListener("click", function(){
+
+        const card = this.closest(".booking-card");
+
+        const status = card.querySelector(".status");
+
+        status.innerHTML = "Completed";
+
+        status.className = "status completed";
+
+        alert("Service Completed Successfully!");
+
+    });
+
+});
+
+
+// Logout Confirmation
+
+const logout = document.querySelector('a[href="login.html"]');
+
+if(logout){
+
+    logout.addEventListener("click", function(e){
+
+        let confirmLogout = confirm("Are you sure you want to logout?");
+
+        if(!confirmLogout){
+
+            e.preventDefault();
+
+        }
+
+    });
+
+}
+
+
+// Active Sidebar Menu
+
+const menuItems = document.querySelectorAll(".sidebar ul li");
+
+menuItems.forEach(function(item){
+
+    item.addEventListener("click", function(){
+
+        menuItems.forEach(function(i){
+
+            i.classList.remove("active");
+
+        });
+
+        this.classList.add("active");
+
+    });
+
+});
+
+
+// Page Loaded
+
+window.onload = function(){
+
+    console.log("Provider Bookings Loaded Successfully");
+
+};
+</script>
+
+</body>
+
+</html>

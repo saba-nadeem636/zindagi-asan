@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Zindagi Asan | Welcome</title>
+
+    <style>
+        /* ======================================
+   ZINDAGI ASAN
+   Welcome Screen
+====================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f5f7fb;
+}
+
+/*==========================
+Welcome Section
+==========================*/
+
+.welcome{
+
+    width:100%;
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    position:relative;
+
+    background:linear-gradient(135deg,#0F9D58,#1565C0);
+
+    overflow:hidden;
+}
+
+/* Dark Overlay */
+
+.overlay{
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,.25);
+
+}
+
+/*==========================
+Content
+==========================*/
+
+.content{
+
+    width:90%;
+    max-width:1100px;
+
+    text-align:center;
+
+    position:relative;
+
+    z-index:10;
+
+    color:white;
+
+}
+
+.logo{
+
+    font-size:60px;
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
+}
+
+.logo span{
+
+    color:#FFD54F;
+
+}
+
+.tagline{
+
+    font-size:22px;
+
+    margin-bottom:30px;
+
+    color:#f5f5f5;
+
+}
+
+.content h2{
+
+    font-size:40px;
+
+    margin-bottom:15px;
+
+}
+
+.description{
+
+    width:70%;
+
+    margin:auto;
+
+    font-size:18px;
+
+    line-height:30px;
+
+    margin-bottom:60px;
+
+}
+
+/*==========================
+Role Cards
+==========================*/
+
+.role-container{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:35px;
+
+    flex-wrap:wrap;
+
+}
+
+.role-card{
+
+    width:350px;
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(12px);
+
+    border-radius:25px;
+
+    padding:35px;
+
+    transition:.4s;
+
+    border:1px solid rgba(255,255,255,.2);
+
+}
+
+.role-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 45px rgba(0,0,0,.25);
+
+}
+
+.role-card i{
+
+    font-size:70px;
+
+    color:#FFD54F;
+
+    margin-bottom:20px;
+
+}
+
+.role-card h3{
+
+    font-size:30px;
+
+    margin-bottom:15px;
+
+}
+
+.role-card p{
+
+    line-height:28px;
+
+    margin-bottom:30px;
+
+}
+
+.role-card button{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:40px;
+
+    background:white;
+
+    color:#1565C0;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.role-card button:hover{
+
+    background:#FFD54F;
+
+    color:#000;
+
+}
+
+/*==========================
+Features
+==========================*/
+
+.features{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:50px;
+
+    flex-wrap:wrap;
+
+    margin-top:70px;
+
+}
+
+.features div{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    font-size:18px;
+
+}
+
+.features i{
+
+    color:#FFD54F;
+
+    font-size:22px;
+
+}
+
+/*==========================
+Responsive
+==========================*/
+
+@media(max-width:992px){
+
+.logo{
+
+    font-size:45px;
+
+}
+
+.content h2{
+
+    font-size:30px;
+
+}
+
+.description{
+
+    width:100%;
+
+}
+
+.role-card{
+
+    width:100%;
+
+    max-width:400px;
+
+}
+
+.features{
+
+    gap:20px;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.logo{
+
+    font-size:36px;
+
+}
+
+.tagline{
+
+    font-size:18px;
+
+}
+
+.content h2{
+
+    font-size:28px;
+
+}
+
+.description{
+
+    font-size:16px;
+
+    line-height:28px;
+
+}
+
+.role-card{
+
+    padding:25px;
+
+}
+
+.features{
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+}
+    </style>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- =========================
+            MAIN CONTAINER
+    ========================== -->
+
+    <section class="welcome">
+
+        <!-- Overlay -->
+
+        <div class="overlay"></div>
+
+        <!-- Content -->
+
+        <div class="content">
+
+            <!-- Logo -->
+
+            <h1 class="logo">
+
+                Zindagi <span>Asan</span>
+
+            </h1>
+
+            <p class="tagline">
+
+                Har Hunar, Har Service — Ek Hi Platform
+
+            </p>
+
+            <h2>
+
+                Welcome!
+
+            </h2>
+
+            <p class="description">
+
+                Whether you want to hire trusted workers
+                or find work according to your skills,
+                Zindagi Asan is here to make life easier.
+
+            </p>
+
+            <!-- Role Cards -->
+
+            <div class="role-container">
+
+                <!-- Customer -->
+
+                <div class="role-card">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <h3>Customer</h3>
+
+                    <p>
+
+                        Find trusted workers for your
+                        home or business.
+
+                    </p>
+
+                    <a href="customer.login.html">
+                        
+
+                        <button>
+
+                            Continue
+
+                        </button>
+
+                    </a>
+
+                </div>
+
+                <!-- Job Seeker -->
+
+                <div class="role-card">
+
+                    <i class="fa-solid fa-briefcase"></i>
+
+                    <h3>Job Seeker</h3>
+
+                    <p>
+
+                        Find jobs and earn money
+                        using your skills.
+
+                    </p>
+
+                    <a href="jobseeker.html">
+
+                        <button>
+
+                            Continue
+
+                        </button>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- Safety -->
+
+            <div class="features">
+
+                <div>
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                    <span>Verified Users</span>
+
+                </div>
+
+                <div>
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    <span>Secure Platform</span>
+
+                </div>
+
+                <div>
+
+                    <i class="fa-solid fa-headset"></i>
+
+                    <span>24/7 Support</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <script > 
+/*=====================================
+   ZINDAGI ASAN
+   Welcome Screen JavaScript
+======================================*/
+
+// Wait until page is fully loaded
+document.addEventListener("DOMContentLoaded", function () {
+
+    // Welcome Animation
+    const content = document.querySelector(".content");
+
+    content.style.opacity = "0";
+    content.style.transform = "translateY(40px)";
+
+    setTimeout(() => {
+
+        content.style.transition = "all 1s ease";
+        content.style.opacity = "1";
+        content.style.transform = "translateY(0)";
+
+    }, 300);
+
+});
+
+
+// Button Click Animation
+const buttons = document.querySelectorAll(".role-card button");
+
+buttons.forEach(button => {
+
+    button.addEventListener("click", function () {
+
+        this.innerHTML = "Loading...";
+
+    });
+
+});
+
+
+// Hover Effect
+const cards = document.querySelectorAll(".role-card");
+
+cards.forEach(card => {
+
+    card.addEventListener("mouseenter", () => {
+
+        card.style.transform = "translateY(-10px) scale(1.03)";
+
+    });
+
+    card.addEventListener("mouseleave", () => {
+
+        card.style.transform = "translateY(0) scale(1)";
+
+    });
+
+});
+    </script>
+
+</body>
+
+</html>

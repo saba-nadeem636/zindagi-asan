@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+
+About Us | Zindagi Asan
+
+</title>
+
+<style>
+    /*====================================
+        ABOUT PAGE CSS
+        Part 1
+=====================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    background:#f8fafc;
+
+    color:#333;
+
+    line-height:1.7;
+
+}
+
+/*=========================
+        NAVBAR
+==========================*/
+
+.navbar{
+
+    width:100%;
+
+    height:75px;
+
+    background:#ffffff;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 80px;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+}
+
+.logo{
+
+    font-size:30px;
+
+    font-weight:700;
+
+    color:#0F9D58;
+
+}
+
+.logo span{
+
+    color:#1565C0;
+
+}
+
+.navbar ul{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:35px;
+
+}
+
+.navbar ul li a{
+
+    text-decoration:none;
+
+    color:#333;
+
+    font-size:16px;
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+.navbar ul li a:hover{
+
+    color:#0F9D58;
+
+}
+
+
+/*=========================
+        HERO SECTION
+==========================*/
+
+.about-hero{
+
+    min-height:450px;
+
+    background:
+    linear-gradient(rgba(0,0,0,.55),
+    rgba(0,0,0,.55)),
+    url("https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1600");
+
+    background-size:cover;
+
+    background-position:center;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    color:white;
+
+    padding:40px;
+
+}
+
+.hero-content{
+
+    max-width:750px;
+
+}
+
+.hero-content h1{
+
+    font-size:58px;
+
+    margin-bottom:20px;
+
+}
+
+.hero-content p{
+
+    font-size:20px;
+
+}
+
+
+/*=========================
+        OUR STORY
+==========================*/
+
+.about-story{
+
+    padding:90px 80px;
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:60px;
+
+    align-items:center;
+
+}
+
+.story-text h2{
+
+    font-size:40px;
+
+    color:#0F9D58;
+
+    margin-bottom:20px;
+
+}
+
+.story-text p{
+
+    color:#555;
+
+    font-size:17px;
+
+}
+
+.story-image{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.story-image i{
+
+    font-size:140px;
+
+    color:#0F9D58;
+
+}
+/*====================================
+      MISSION & VISION
+====================================*/
+
+.mission-section{
+
+    padding:90px 80px;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:35px;
+
+    background:#ffffff;
+
+}
+
+.mission-card{
+
+    background:#f8fafc;
+
+    padding:40px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    transition:.3s;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.mission-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.mission-card i{
+
+    font-size:50px;
+
+    color:#0F9D58;
+
+    margin-bottom:20px;
+
+}
+
+.mission-card h2{
+
+    font-size:30px;
+
+    margin-bottom:15px;
+
+    color:#222;
+
+}
+
+.mission-card p{
+
+    color:#666;
+
+    line-height:1.8;
+
+}
+
+
+
+/*====================================
+        WHY CHOOSE US
+====================================*/
+
+.why-us{
+
+    padding:90px 80px;
+
+    background:#f5f7fb;
+
+}
+
+.why-us h2{
+
+    text-align:center;
+
+    font-size:42px;
+
+    margin-bottom:50px;
+
+    color:#0F9D58;
+
+}
+
+.why-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+}
+
+.why-card{
+
+    background:#fff;
+
+    padding:35px 25px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.why-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.why-card i{
+
+    font-size:45px;
+
+    color:#0F9D58;
+
+    margin-bottom:20px;
+
+}
+
+.why-card h3{
+
+    margin-bottom:15px;
+
+    color:#222;
+
+}
+
+.why-card p{
+
+    color:#666;
+
+}
+
+
+
+/*====================================
+          OUR VALUES
+====================================*/
+
+.values{
+
+    padding:90px 80px;
+
+    background:#ffffff;
+
+}
+
+.values h2{
+
+    text-align:center;
+
+    font-size:42px;
+
+    color:#0F9D58;
+
+    margin-bottom:50px;
+
+}
+
+.value-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+}
+
+.value-box{
+
+    background:#f8fafc;
+
+    padding:35px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    transition:.3s;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+.value-box:hover{
+
+    background:#0F9D58;
+
+    color:#fff;
+
+    transform:translateY(-8px);
+
+}
+
+.value-box h3{
+
+    margin-bottom:15px;
+
+    font-size:24px;
+
+}
+
+.value-box p{
+
+    line-height:1.7;
+
+}
+/*====================================
+        STATISTICS SECTION
+====================================*/
+
+.statistics{
+
+    padding:90px 80px;
+
+    background:#f5f7fb;
+
+}
+
+.statistics h2{
+
+    text-align:center;
+
+    font-size:42px;
+
+    color:#0F9D58;
+
+    margin-bottom:50px;
+
+}
+
+.stats-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+}
+
+.stat-box{
+
+    background:#fff;
+
+    padding:40px 20px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.stat-box:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.stat-box h3{
+
+    font-size:45px;
+
+    color:#0F9D58;
+
+    margin-bottom:10px;
+
+}
+
+.stat-box p{
+
+    color:#666;
+
+    font-size:16px;
+
+}
+
+
+
+/*====================================
+        CALL TO ACTION
+====================================*/
+
+.cta{
+
+    background:linear-gradient(135deg,#0F9D58,#1565C0);
+
+    color:#fff;
+
+    text-align:center;
+
+    padding:90px 30px;
+
+}
+
+.cta h2{
+
+    font-size:42px;
+
+    margin-bottom:20px;
+
+}
+
+.cta p{
+
+    max-width:750px;
+
+    margin:auto;
+
+    line-height:1.8;
+
+    margin-bottom:35px;
+
+}
+
+.cta-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.btn-primary,
+.btn-secondary{
+
+    text-decoration:none;
+
+    padding:15px 35px;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.btn-primary{
+
+    background:#fff;
+
+    color:#0F9D58;
+
+}
+
+.btn-primary:hover{
+
+    background:#f1f1f1;
+
+}
+
+.btn-secondary{
+
+    border:2px solid #fff;
+
+    color:#fff;
+
+}
+
+.btn-secondary:hover{
+
+    background:#fff;
+
+    color:#0F9D58;
+
+}
+
+
+
+/*====================================
+              FOOTER
+====================================*/
+
+footer{
+
+    background:#1f2937;
+
+    color:#fff;
+
+    padding:60px 80px 20px;
+
+}
+
+.footer-content{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:40px;
+
+    margin-bottom:30px;
+
+}
+
+.footer-logo h2{
+
+    color:#0F9D58;
+
+    margin-bottom:15px;
+
+}
+
+.footer-logo span{
+
+    color:#1565C0;
+
+}
+
+.footer-logo p{
+
+    color:#d1d5db;
+
+    line-height:1.8;
+
+}
+
+.footer-links h3,
+.footer-contact h3{
+
+    margin-bottom:20px;
+
+}
+
+.footer-links ul{
+
+    list-style:none;
+
+}
+
+.footer-links li{
+
+    margin-bottom:12px;
+
+}
+
+.footer-links a{
+
+    color:#d1d5db;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+.footer-links a:hover{
+
+    color:#0F9D58;
+
+}
+
+.footer-contact p{
+
+    margin-bottom:12px;
+
+    color:#d1d5db;
+
+}
+
+.copyright{
+
+    text-align:center;
+
+    border-top:1px solid rgba(255,255,255,.15);
+
+    padding-top:20px;
+
+    color:#d1d5db;
+
+}
+
+
+
+/*====================================
+        RESPONSIVE DESIGN
+====================================*/
+
+@media(max-width:992px){
+
+.about-story,
+.mission-section,
+.footer-content{
+
+grid-template-columns:1fr;
+
+}
+
+.why-container,
+.value-container,
+.stats-container{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.navbar{
+
+padding:20px 30px;
+
+flex-direction:column;
+
+height:auto;
+
+}
+
+.navbar ul{
+
+margin-top:20px;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+}
+
+}
+
+
+
+@media(max-width:768px){
+
+.hero-content h1{
+
+font-size:42px;
+
+}
+
+.hero-content p{
+
+font-size:18px;
+
+}
+
+.about-story,
+.mission-section,
+.why-us,
+.values,
+.statistics{
+
+padding:60px 25px;
+
+}
+
+.why-container,
+.value-container,
+.stats-container{
+
+grid-template-columns:1fr;
+
+}
+
+.cta h2{
+
+font-size:32px;
+
+}
+
+.footer{
+
+padding:50px 25px 20px;
+
+}
+
+}
+
+</style>
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ==========================
+            NAVBAR
+=========================== -->
+
+<header class="navbar">
+
+<div class="logo">
+
+Zindagi <span style="color: #FFD54F;">Asan</span>
+
+</div>
+
+<nav>
+
+<ul>
+
+<li>
+
+<a href="welcome.html">
+
+Home
+
+</a>
+
+</li>
+
+<li>
+
+<a href="about.html">
+
+About
+
+</a>
+
+</li>
+
+<li>
+
+<a href="contact.html">
+
+Contact
+
+</a>
+
+</li>
+
+<li>
+
+<a href="customer.html">
+
+Services
+
+</a>
+
+</li>
+
+</ul>
+
+</nav>
+
+</header>
+
+
+
+<!-- ==========================
+          HERO SECTION
+=========================== -->
+
+<section class="about-hero">
+
+<div class="hero-content">
+
+<h1>
+
+About Zindagi Asan
+
+</h1>
+
+<p>
+
+Connecting customers with trusted service providers through one simple platform.
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- ==========================
+          OUR STORY
+=========================== -->
+
+<section class="about-story">
+
+<div class="story-text">
+
+<h2>
+
+Our Story
+
+</h2>
+
+<p>
+
+Zindagi Asan was created with one simple goal:
+to make everyday services easier to find and easier to provide.
+
+Many skilled people struggle to find customers,
+while many customers struggle to find trusted workers.
+
+Our platform brings both together in one secure and easy-to-use place.
+
+</p>
+
+</div>
+
+<div class="story-image">
+
+<i class="fa-solid fa-handshake"></i>
+
+</div>
+
+</section>
+<!-- ==========================
+        MISSION & VISION
+=========================== -->
+
+<section class="mission-section">
+
+    <div class="mission-card">
+
+        <i class="fa-solid fa-bullseye"></i>
+
+        <h2>
+            Our Mission
+        </h2>
+
+        <p>
+            Our mission is to connect customers with trusted and skilled
+            service providers through one reliable platform. We aim to
+            create employment opportunities while making daily services
+            simple, secure, and accessible for everyone.
+        </p>
+
+    </div>
+
+
+
+    <div class="mission-card">
+
+        <i class="fa-solid fa-eye"></i>
+
+        <h2>
+            Our Vision
+        </h2>
+
+        <p>
+            Our vision is to become Pakistan's most trusted service
+            marketplace where every skilled individual can earn with
+            dignity and every customer can find quality services
+            without difficulty.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+
+
+<!-- ==========================
+        WHY CHOOSE US
+=========================== -->
+
+<section class="why-us">
+
+    <h2>
+
+        Why Choose Zindagi Asan?
+
+    </h2>
+
+    <div class="why-container">
+
+        <div class="why-card">
+
+            <i class="fa-solid fa-user-check"></i>
+
+            <h3>
+                Trusted Professionals
+            </h3>
+
+            <p>
+                Find skilled and verified service providers with confidence.
+            </p>
+
+        </div>
+
+
+
+        <div class="why-card">
+
+            <i class="fa-solid fa-clock"></i>
+
+            <h3>
+                Quick Service
+            </h3>
+
+            <p>
+                Easily search and connect with service providers in minutes.
+            </p>
+
+        </div>
+
+
+
+        <div class="why-card">
+
+            <i class="fa-solid fa-wallet"></i>
+
+            <h3>
+                Affordable Pricing
+            </h3>
+
+            <p>
+                Compare services and choose one that fits your budget.
+            </p>
+
+        </div>
+
+
+
+        <div class="why-card">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+            <h3>
+                Safe Platform
+            </h3>
+
+            <p>
+                A secure environment for both customers and job seekers.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+<!-- ==========================
+          OUR VALUES
+=========================== -->
+
+<section class="values">
+
+    <h2>
+
+        Our Core Values
+
+    </h2>
+
+    <div class="value-container">
+
+        <div class="value-box">
+
+            <h3>🤝 Trust</h3>
+
+            <p>
+                Building reliable relationships between customers and service providers.
+            </p>
+
+        </div>
+
+        <div class="value-box">
+
+            <h3>⭐ Quality</h3>
+
+            <p>
+                Promoting quality work and customer satisfaction.
+            </p>
+
+        </div>
+
+        <div class="value-box">
+
+            <h3>💡 Innovation</h3>
+
+            <p>
+                Using technology to simplify everyday services.
+            </p>
+
+        </div>
+
+        <div class="value-box">
+
+            <h3>🌍 Community</h3>
+
+            <p>
+                Supporting local talent and creating more employment opportunities.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ==========================
+        OUR IMPACT
+=========================== -->
+
+<section class="statistics">
+
+    <h2>
+        Our Growing Community
+    </h2>
+
+    <div class="stats-container">
+
+        <div class="stat-box">
+
+            <h3>100+</h3>
+
+            <p>Service Providers</p>
+
+        </div>
+
+        <div class="stat-box">
+
+            <h3>500+</h3>
+
+            <p>Customers</p>
+
+        </div>
+
+        <div class="stat-box">
+
+            <h3>15+</h3>
+
+            <p>Service Categories</p>
+
+        </div>
+
+        <div class="stat-box">
+
+            <h3>24/7</h3>
+
+            <p>Platform Support</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================
+        CALL TO ACTION
+=========================== -->
+
+<section class="cta">
+
+    <h2>
+        Ready to Get Started?
+    </h2>
+
+    <p>
+        Join Zindagi Asan today and become part of a trusted community where
+        customers and skilled professionals connect with confidence.
+    </p>
+
+    <div class="cta-buttons">
+
+        <a href="customer.html" class="btn-primary">
+
+            Find Services
+
+        </a>
+
+        <a href="jobseeker.html" class="btn-secondary">
+
+            Join as Job Seeker
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================
+            FOOTER
+=========================== -->
+
+<footer>
+
+    <div class="footer-content">
+
+        <div class="footer-logo">
+
+            <h2>Zindagi <span>Asan</span></h2>
+
+            <p>
+
+                Making everyday services simple, trusted and accessible for everyone.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="footer-links">
+
+            <h3>
+
+                Quick Links
+
+            </h3>
+
+            <ul>
+
+                <li><a href="welcome.html">Home</a></li>
+
+                <li><a href="customer.html">Services</a></li>
+
+                <li><a href="contact.html">Contact</a></li>
+
+                <li><a href="jobseeker-login.html">Job Seeker</a></li>
+
+            </ul>
+
+        </div>
+
+
+
+        <div class="footer-contact">
+
+            <h3>
+
+                Contact
+
+            </h3>
+
+            <p>
+
+                Email: sn484702@gmail.com
+
+            </p>
+
+            <p>
+
+                Phone: 03143811811
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="copyright">
+
+        <p>
+
+            © 2026 Zindagi Asan. All Rights Reserved.
+
+        </p>
+
+    </div>
+
+</footer>
+
+</body>
+
+</html>

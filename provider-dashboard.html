@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Provider Dashboard | Zindagi Asan</title>
+
+   <style>
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    display:flex;
+    background:#f4f7fc;
+}
+
+/* Sidebar */
+
+.sidebar{
+    width:260px;
+    height:100vh;
+    background:#2a9085;
+    color:#fff;
+    position:fixed;
+    left:0;
+    top:0;
+    overflow-y:auto;
+}
+
+.logo{
+    text-align:center;
+    padding:25px 0;
+    border-bottom:1px solid rgba(255,255,255,0.2);
+}
+
+.logo h2{
+    font-size:28px;
+}
+
+.sidebar ul{
+    list-style:none;
+    margin-top:20px;
+}
+
+.sidebar ul li{
+    margin:8px 15px;
+}
+
+.sidebar ul li a{
+    display:block;
+    padding:14px 18px;
+    text-decoration:none;
+    color:#fff;
+    border-radius:10px;
+    transition:.3s;
+}
+
+.sidebar ul li a i{
+    margin-right:10px;
+}
+
+.sidebar ul li:hover a,
+.sidebar ul li.active a{
+    background:#ffffff;
+    color:#2a9085;
+}
+
+/* Main */
+
+.main-content{
+    margin-left:260px;
+    width:calc(100% - 260px);
+    padding:30px;
+}
+
+/* Topbar */
+
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.profile{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.profile img{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.profile span{
+    font-weight:bold;
+}
+
+/* Welcome */
+
+.welcome{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    margin-bottom:25px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.welcome h2{
+    color:#2a9085;
+    margin-bottom:8px;
+}
+
+/* Cards */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    margin-bottom:30px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    text-align:center;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card i{
+    font-size:35px;
+    color:#2a9085;
+    margin-bottom:15px;
+}
+
+.card h3{
+    font-size:28px;
+    margin-bottom:8px;
+}
+
+/* Table */
+
+.recent-bookings{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.recent-bookings h2{
+    margin-bottom:20px;
+    color:#2a9085;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+table th,
+table td{
+    padding:15px;
+    border-bottom:1px solid #ddd;
+    text-align:left;
+}
+
+table th{
+    background:#2a9085;
+    color:white;
+}
+
+.pending{
+    background:#fff3cd;
+    color:#856404;
+    padding:6px 12px;
+    border-radius:20px;
+}
+
+.completed{
+    background:#d4edda;
+    color:#155724;
+    padding:6px 12px;
+    border-radius:20px;
+}
+
+/* Responsive */
+
+@media(max-width:992px){
+
+.cards{
+    grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media(max-width:768px){
+
+.sidebar{
+    width:220px;
+}
+
+.main-content{
+    margin-left:220px;
+    width:calc(100% - 220px);
+}
+
+.cards{
+    grid-template-columns:1fr;
+}
+
+.topbar{
+    flex-direction:column;
+    gap:15px;
+}
+
+table{
+    display:block;
+    overflow-x:auto;
+}
+
+}
+   </style>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+
+    <div class="sidebar">
+
+        <div class="logo">
+            <h2>Zindagi <span style="color: #FFD54F;">Asan</span></h2>
+        </div>
+
+        <ul>
+
+            <li class="active">
+                <a href="provider-dashboard.html">
+                    <i class="fas fa-home"></i> Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="provider-profile.html">
+                    <i class="fas fa-user"></i> My Profile
+                </a>
+            </li>
+
+            <li>
+                <a href="provider-bookings.html">
+                    <i class="fas fa-calendar-check"></i> My Bookings
+                </a>
+            </li>
+
+            <li>
+                <a href="provider earnings.html">
+                    <i class="fas fa-wallet"></i> Earnings
+                </a>
+            </li>
+
+            <li>
+                <a href="provider earnings.html">
+                    <i class="fas fa-star"></i> Reviews
+                </a>
+            </li>
+
+            <li>
+                <a href="provider-setting.html">
+                    <i class="fas fa-cog"></i> Settings
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+    <!-- Main Content -->
+
+    <div class="main-content">
+
+        <!-- Top Bar -->
+
+        <div class="topbar">
+
+            <h1>Provider Dashboard</h1>
+
+            <div class="profile">
+
+               <a href="provider-profile.html"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Provider"></a> 
+
+                <span>Ali Tailor</span>
+
+            </div>
+
+        </div>
+
+        <!-- Welcome -->
+
+        <div class="welcome">
+
+            <h2>Welcome Back 👋</h2>
+
+            <p>Manage your bookings, profile and earnings from one place.</p>
+
+        </div>
+
+        <!-- Dashboard Cards -->
+
+        <div class="cards">
+
+            <div class="card">
+
+                <i class="fas fa-calendar-check"></i>
+
+                <h3>120</h3>
+
+                <p>Total Bookings</p>
+
+            </div>
+
+            <div class="card">
+
+                <i class="fas fa-clock"></i>
+
+                <h3>18</h3>
+
+                <p>Pending Requests</p>
+
+            </div>
+
+            <div class="card">
+
+                <i class="fas fa-check-circle"></i>
+
+                <h3>96</h3>
+
+                <p>Completed Jobs</p>
+
+            </div>
+
+            <div class="card">
+
+                <i class="fas fa-wallet"></i>
+
+                <h3>Rs. 85,000</h3>
+
+                <p>Total Earnings</p>
+
+            </div>
+
+        </div>
+
+        <!-- Recent Bookings -->
+
+        <div class="recent-bookings">
+
+            <h2>Recent Bookings</h2>
+
+            <table>
+
+                <tr>
+                    <th>Customer</th>
+                    <th>Service</th>
+                    <th>Status</th>
+                </tr>
+
+                <tr>
+                    <td>Saba Nadeem</td>
+                    <td>Tailoring</td>
+                    <td><span class="pending">Pending</span></td>
+                </tr>
+
+                <tr>
+                    <td>Ahmed Khan</td>
+                    <td>Tailoring</td>
+                    <td><span class="completed">Completed</span></td>
+                </tr>
+
+                <tr>
+                    <td>Sara Ali</td>
+                    <td>Tailoring</td>
+                    <td><span class="pending">Pending</span></td>
+                </tr>
+
+            </table>
+
+        </div>
+
+    </div>
+
+    <script>
+// ==========================
+// Provider Dashboard JS
+// ==========================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    console.log("Provider Dashboard Loaded Successfully");
+
+    // Welcome Message
+    const userName = document.querySelector(".profile span");
+
+    if (userName) {
+        console.log("Welcome " + userName.textContent);
+    }
+
+    // Active Sidebar Menu
+    const menuItems = document.querySelectorAll(".sidebar ul li");
+
+    menuItems.forEach(item => {
+        item.addEventListener("click", function () {
+
+            menuItems.forEach(i => i.classList.remove("active"));
+            this.classList.add("active");
+
+        });
+    });
+
+    // Card Hover Effect
+    const cards = document.querySelectorAll(".card");
+
+    cards.forEach(card => {
+
+        card.addEventListener("mouseenter", function () {
+            this.style.transform = "translateY(-8px)";
+            this.style.transition = "0.3s";
+        });
+
+        card.addEventListener("mouseleave", function () {
+            this.style.transform = "translateY(0)";
+        });
+
+    });
+
+    // Dashboard Statistics (Demo)
+    const stats = document.querySelectorAll(".card h3");
+
+    if (stats.length >= 4) {
+        console.log("Total Bookings:", stats[0].textContent);
+        console.log("Pending Requests:", stats[1].textContent);
+        console.log("Completed Jobs:", stats[2].textContent);
+        console.log("Total Earnings:", stats[3].textContent);
+    }
+
+});
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,1163 @@
+/*====================================
+        PROVIDER DASHBOARD
+             PART 1
+====================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    background:#f5f7fb;
+
+    color:#333;
+
+}
+
+/*=========================
+        NAVBAR
+==========================*/
+
+.navbar{
+
+    width:100%;
+
+    height:80px;
+
+    background:#ffffff;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 70px;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:999;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+
+}
+
+.logo{
+
+    font-size:30px;
+
+    font-weight:700;
+
+    color:#0F9D58;
+
+}
+
+.logo span{
+
+    color:#1565C0;
+
+}
+
+.nav-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+.notification{
+
+    width:50px;
+
+    height:50px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#eef5ff;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.notification:hover{
+
+    background:#1565C0;
+
+    color:white;
+
+}
+
+.notification i{
+
+    font-size:20px;
+
+}
+
+.profile-img{
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:3px solid #0F9D58;
+
+}
+
+
+
+/*=========================
+        HERO SECTION
+==========================*/
+
+.hero{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    align-items:center;
+
+    gap:60px;
+
+    padding:80px;
+
+    background:linear-gradient(135deg,#0F9D58,#1565C0);
+
+    color:white;
+
+}
+
+.hero-left h1{
+
+    font-size:56px;
+
+    margin-bottom:20px;
+
+}
+
+.hero-left p{
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    margin-bottom:35px;
+
+}
+
+.hero-left button{
+
+    padding:16px 35px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:white;
+
+    color:#0F9D58;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.hero-left button:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 12px 30px rgba(0,0,0,.20);
+
+}
+
+.hero-right{
+
+    text-align:center;
+
+}
+
+.hero-right img{
+
+    width:100%;
+
+    max-width:480px;
+
+    border-radius:25px;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.30);
+
+}
+
+
+
+/*=========================
+      PROFILE PROGRESS
+==========================*/
+
+.progress-section{
+
+    padding:70px 80px;
+
+}
+
+.progress-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:40px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.progress-card h2{
+
+    color:#1565C0;
+
+    margin-bottom:10px;
+
+}
+
+.progress-card p{
+
+    color:#666;
+
+    margin-bottom:25px;
+
+}
+
+.progress{
+
+    width:100%;
+
+    height:16px;
+
+    background:#e5e7eb;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+.progress-bar{
+
+    width:25%;
+
+    height:100%;
+
+    background:linear-gradient(90deg,#0F9D58,#1565C0);
+
+}
+
+.progress-card h3{
+
+    margin-top:15px;
+
+    color:#0F9D58;
+
+}
+/*====================================
+      DASHBOARD CARDS
+====================================*/
+
+.dashboard-cards{
+
+    padding:20px 80px 80px;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+}
+
+.card{
+
+    background:#ffffff;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+    cursor:pointer;
+
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 18px 35px rgba(0,0,0,.12);
+
+}
+
+.icon{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    background:linear-gradient(135deg,#0F9D58,#1565C0);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-bottom:20px;
+
+}
+
+.icon i{
+
+    color:#fff;
+
+    font-size:30px;
+
+}
+
+.card-content h2{
+
+    font-size:22px;
+
+    color:#222;
+
+    margin-bottom:10px;
+
+}
+
+.card-content h3{
+
+    color:#0F9D58;
+
+    font-size:28px;
+
+    margin-bottom:10px;
+
+}
+
+.card-content p{
+
+    color:#666;
+
+    line-height:1.7;
+
+}
+
+
+
+/*====================================
+      WHY COMPLETE PROFILE
+====================================*/
+
+.tips-section{
+
+    padding:0 80px 80px;
+
+}
+
+.tips-box{
+
+    background:linear-gradient(135deg,#ffffff,#eef7ff);
+
+    border-left:8px solid #0F9D58;
+
+    border-radius:20px;
+
+    padding:45px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.tips-box h2{
+
+    color:#1565C0;
+
+    margin-bottom:25px;
+
+    font-size:34px;
+
+}
+
+.tips-box ul{
+
+    list-style:none;
+
+}
+
+.tips-box li{
+
+    padding:14px 0;
+
+    font-size:17px;
+
+    color:#555;
+
+    border-bottom:1px solid #e5e7eb;
+
+}
+
+.tips-box li:last-child{
+
+    border-bottom:none;
+
+}
+
+.tips-box li:hover{
+
+    color:#0F9D58;
+
+    padding-left:10px;
+
+    transition:.3s;
+
+}
+/*====================================
+        SERVICE SECTION
+====================================*/
+
+.service-section{
+
+    padding:80px;
+
+    background:#f8fafc;
+
+}
+
+.section-heading{
+
+    text-align:center;
+
+    margin-bottom:60px;
+
+}
+
+.section-heading h2{
+
+    font-size:42px;
+
+    color:#1565C0;
+
+    margin-bottom:15px;
+
+}
+
+.section-heading p{
+
+    max-width:750px;
+
+    margin:auto;
+
+    color:#666;
+
+    line-height:1.8;
+
+    font-size:17px;
+
+}
+
+
+
+/*====================================
+        SERVICE GRID
+====================================*/
+
+.service-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:30px;
+
+}
+
+.service-card{
+
+    background:#fff;
+
+    border-radius:22px;
+
+    padding:35px 25px;
+
+    text-align:center;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+    border:2px solid transparent;
+
+}
+
+.service-card:hover{
+
+    transform:translateY(-12px);
+
+    border-color:#0F9D58;
+
+    box-shadow:0 20px 40px rgba(15,157,88,.18);
+
+}
+
+.service-card i{
+
+    font-size:50px;
+
+    color:#0F9D58;
+
+    margin-bottom:20px;
+
+    transition:.3s;
+
+}
+
+.service-card:hover i{
+
+    transform:scale(1.15);
+
+}
+
+.service-card h3{
+
+    font-size:21px;
+
+    color:#222;
+
+    margin-bottom:20px;
+
+    min-height:55px;
+
+}
+
+
+
+/*====================================
+        SELECT BUTTON
+====================================*/
+
+.service-card button{
+
+    width:100%;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:linear-gradient(135deg,#0F9D58,#1565C0);
+
+    color:#fff;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.service-card button:hover{
+
+    transform:scale(1.05);
+
+    box-shadow:0 10px 20px rgba(21,101,192,.30);
+
+}
+
+.service-card button:active{
+
+    transform:scale(.96);
+
+}
+/*====================================
+        PROFILE SECTION
+====================================*/
+
+.profile-section{
+
+    padding:90px 80px;
+
+    background:#ffffff;
+
+}
+
+.profile-form{
+
+    background:#fff;
+
+    border-radius:25px;
+
+    padding:50px;
+
+    margin-top:40px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:30px;
+
+}
+
+
+
+/*====================================
+        FORM GROUP
+====================================*/
+
+.form-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.form-group label{
+
+    font-size:16px;
+
+    font-weight:600;
+
+    color:#333;
+
+    margin-bottom:10px;
+
+}
+
+.form-group input,
+
+.form-group select,
+
+.form-group textarea{
+
+    width:100%;
+
+    padding:16px 18px;
+
+    border:2px solid #e5e7eb;
+
+    border-radius:14px;
+
+    font-size:15px;
+
+    outline:none;
+
+    transition:.3s;
+
+    background:#fafafa;
+
+}
+
+.form-group input:focus,
+
+.form-group select:focus,
+
+.form-group textarea:focus{
+
+    border-color:#0F9D58;
+
+    background:#fff;
+
+    box-shadow:0 0 12px rgba(15,157,88,.18);
+
+}
+
+.form-group textarea{
+
+    resize:vertical;
+
+    min-height:180px;
+
+}
+
+
+
+/*====================================
+        FILE INPUT
+====================================*/
+
+.form-group input[type="file"]{
+
+    padding:12px;
+
+    background:#eef7ff;
+
+    border:2px dashed #1565C0;
+
+    cursor:pointer;
+
+}
+
+
+
+/*====================================
+        FULL WIDTH
+====================================*/
+
+.full-width{
+
+    grid-column:1 / -1;
+
+}
+
+
+
+/*====================================
+        SAVE BUTTON
+====================================*/
+
+.save-btn{
+
+    width:100%;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:linear-gradient(135deg,#0F9D58,#1565C0);
+
+    color:#fff;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.save-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 15px 35px rgba(21,101,192,.30);
+
+}
+/*====================================
+        PROFILE PREVIEW
+====================================*/
+
+.profile-preview{
+
+    padding:90px 80px;
+
+    background:#f8fafc;
+
+}
+
+.preview-card{
+
+    margin-top:40px;
+
+    background:#ffffff;
+
+    border-radius:25px;
+
+    padding:40px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:40px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+}
+
+.preview-image img{
+
+    width:180px;
+
+    height:180px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:5px solid #0F9D58;
+
+}
+
+.preview-details{
+
+    flex:1;
+
+}
+
+.preview-details h2{
+
+    font-size:34px;
+
+    color:#1565C0;
+
+    margin-bottom:20px;
+
+}
+
+.preview-details p{
+
+    margin-bottom:15px;
+
+    color:#555;
+
+    font-size:17px;
+
+}
+
+.preview-details i{
+
+    color:#0F9D58;
+
+    margin-right:10px;
+
+}
+
+.edit-btn{
+
+    margin-top:20px;
+
+    padding:15px 35px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:#1565C0;
+
+    color:#fff;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.edit-btn:hover{
+
+    background:#0F9D58;
+
+}
+
+
+
+/*====================================
+        ACCOUNT SETTINGS
+====================================*/
+
+.account-settings{
+
+    padding:90px 80px;
+
+    background:#ffffff;
+
+}
+
+.settings-grid{
+
+    margin-top:40px;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+.setting-card{
+
+    background:#f8fafc;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    text-align:center;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.setting-card:hover{
+
+    transform:translateY(-8px);
+
+    background:#eef7ff;
+
+}
+
+.setting-card i{
+
+    font-size:42px;
+
+    color:#0F9D58;
+
+    margin-bottom:20px;
+
+}
+
+.setting-card h3{
+
+    margin-bottom:15px;
+
+    color:#222;
+
+}
+
+.setting-card p{
+
+    color:#666;
+
+    line-height:1.7;
+
+}
+
+
+
+/*====================================
+            FOOTER
+====================================*/
+
+footer{
+
+    background:#1f2937;
+
+    color:#fff;
+
+    text-align:center;
+
+    padding:50px 20px;
+
+}
+
+.footer-content h2{
+
+    font-size:34px;
+
+    color:#0F9D58;
+
+    margin-bottom:20px;
+
+}
+
+.footer-content span{
+
+    color:#1565C0;
+
+}
+
+.footer-content p{
+
+    color:#d1d5db;
+
+    margin-bottom:12px;
+
+    line-height:1.8;
+
+}
+
+.copyright{
+
+    margin-top:30px;
+
+    border-top:1px solid rgba(255,255,255,.15);
+
+    padding-top:20px;
+
+    color:#9ca3af;
+
+}
+
+
+
+/*====================================
+        RESPONSIVE
+====================================*/
+
+@media(max-width:992px){
+
+.hero{
+
+grid-template-columns:1fr;
+
+text-align:center;
+
+}
+
+.dashboard-cards{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.profile-form{
+
+grid-template-columns:1fr;
+
+}
+
+.preview-card{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+.settings-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+
+
+@media(max-width:768px){
+
+.navbar{
+
+padding:20px;
+
+height:auto;
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+.hero{
+
+padding:50px 25px;
+
+}
+
+.hero-left h1{
+
+font-size:38px;
+
+}
+
+.dashboard-cards,
+
+.service-section,
+
+.profile-section,
+
+.profile-preview,
+
+.account-settings,
+
+.progress-section{
+
+padding:50px 20px;
+
+}
+
+.service-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.preview-image img{
+
+width:150px;
+
+height:150px;
+
+}
+
+}
+
+
+
+@media(max-width:576px){
+
+.hero-left h1{
+
+font-size:30px;
+
+}
+
+.section-heading h2{
+
+font-size:30px;
+
+}
+
+.card{
+
+padding:25px;
+
+}
+
+.progress-card{
+
+padding:25px;
+
+}
+
+.footer-content h2{
+
+font-size:28px;
+
+}
+
+}

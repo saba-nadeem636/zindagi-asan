@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Provider Earnings | Zindagi Asan</title>
+
+   <style>
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f7fc;
+}
+
+.container{
+    display:flex;
+}
+
+/* Sidebar */
+
+.sidebar{
+    width:250px;
+    height:100vh;
+    background:#2a9085;
+    position:fixed;
+    left:0;
+    top:0;
+    color:#fff;
+}
+
+.sidebar h2{
+    text-align:center;
+    padding:25px;
+    border-bottom:1px solid rgba(255,255,255,.2);
+}
+
+.sidebar ul{
+    list-style:none;
+    margin-top:20px;
+}
+
+.sidebar ul li{
+    margin:8px 15px;
+}
+
+.sidebar ul li a{
+    display:block;
+    text-decoration:none;
+    color:#fff;
+    padding:14px;
+    border-radius:8px;
+    transition:.3s;
+}
+
+.sidebar ul li.active a,
+.sidebar ul li a:hover{
+    background:#fff;
+    color:#2a9085;
+}
+
+.sidebar i{
+    margin-right:10px;
+}
+
+/* Main */
+
+.main-content{
+    margin-left:250px;
+    width:100%;
+    padding:30px;
+}
+
+.top-bar h1{
+    color:#2a9085;
+    margin-bottom:30px;
+}
+
+/* Cards */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    margin-bottom:30px;
+}
+
+.card{
+    background:#fff;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card i{
+    font-size:40px;
+    color:#2a9085;
+    margin-bottom:15px;
+}
+
+.card h2{
+    margin-bottom:10px;
+    color:#333;
+}
+
+.card p{
+    color:#777;
+}
+/* ===========================
+   Payment History
+=========================== */
+
+.payment-history{
+    background:#fff;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    margin-bottom:30px;
+}
+
+.payment-history h2{
+    color:#2a9085;
+    margin-bottom:20px;
+}
+
+.payment-history table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.payment-history th,
+.payment-history td{
+    padding:15px;
+    border-bottom:1px solid #ddd;
+    text-align:left;
+}
+
+.payment-history th{
+    background:#2a9085;
+    color:#fff;
+}
+
+.payment-history tr:hover{
+    background:#f5f5f5;
+}
+
+.paid{
+    background:#d4edda;
+    color:#155724;
+    padding:6px 14px;
+    border-radius:20px;
+    font-size:14px;
+    font-weight:bold;
+}
+
+/* ===========================
+   Withdraw Card
+=========================== */
+
+.withdraw-card{
+    background:#fff;
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.withdraw-card h2{
+    color:#2a9085;
+    margin-bottom:10px;
+}
+
+.withdraw-card p{
+    color:#777;
+    margin-bottom:10px;
+}
+
+.withdraw-card h1{
+    color:#28a745;
+    margin-bottom:25px;
+    font-size:40px;
+}
+
+#withdrawBtn{
+    background:#2a9085;
+    color:#fff;
+    border:none;
+    padding:15px 35px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+    transition:.3s;
+}
+
+#withdrawBtn:hover{
+    background:#1f6f67;
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media(max-width:992px){
+
+.cards{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.payment-history{
+    overflow-x:auto;
+}
+
+}
+
+@media(max-width:768px){
+
+.sidebar{
+    width:220px;
+}
+
+.main-content{
+    margin-left:220px;
+    padding:20px;
+}
+
+.cards{
+    grid-template-columns:1fr;
+}
+
+.payment-history table{
+    width:700px;
+}
+
+.withdraw-card h1{
+    font-size:30px;
+}
+
+}
+
+@media(max-width:600px){
+
+.container{
+    flex-direction:column;
+}
+
+.sidebar{
+    position:relative;
+    width:100%;
+    height:auto;
+}
+
+.main-content{
+    margin-left:0;
+}
+
+}
+   </style>
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+
+    <div class="sidebar">
+
+        <h2>Zindagi <span style="color: #FFD54F;">Asan</span></h2>
+
+        <ul>
+
+            <li>
+
+                <a href="provider-dashboard.html">
+
+                    <i class="fas fa-home"></i>
+
+                    Dashboard
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="provider-profile.html">
+
+                    <i class="fas fa-user"></i>
+
+                    My Profile
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="provider-bookings.html">
+
+                    <i class="fas fa-calendar-check"></i>
+
+                    Bookings
+
+                </a>
+
+            </li>
+
+            <li class="active">
+
+                <a href="provider-earnings.html">
+
+                    <i class="fas fa-wallet"></i>
+
+                    Earnings
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="provider-reviews.html">
+
+                    <i class="fas fa-star"></i>
+
+                    Reviews
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="provider-setting.html">
+
+                    <i class="fas fa-cog"></i>
+
+                    Settings
+
+                </a>
+
+            </li>
+
+        </ul>
+
+    </div>
+
+    <!-- Main Content -->
+
+    <div class="main-content">
+
+        <div class="top-bar">
+
+            <h1>My Earnings</h1>
+
+        </div>
+
+        <!-- Summary Cards -->
+
+        <div class="cards">
+
+            <div class="card">
+
+                <i class="fas fa-wallet"></i>
+
+                <h2>Rs. 85,000</h2>
+
+                <p>Total Earnings</p>
+
+            </div>
+
+            <div class="card">
+
+                <i class="fas fa-calendar-day"></i>
+
+                <h2>Rs. 3,500</h2>
+
+                <p>Today's Earnings</p>
+
+            </div>
+
+            <div class="card">
+
+                <i class="fas fa-chart-line"></i>
+
+                <h2>Rs. 28,000</h2>
+
+                <p>This Month</p>
+
+            </div>
+
+        </div>
+
+        <!-- Payment History -->
+
+        <div class="payment-history">
+
+            <h2>Payment History</h2>
+
+            <table>
+
+                <tr>
+
+                    <th>Date</th>
+
+                    <th>Customer</th>
+
+                    <th>Service</th>
+
+                    <th>Amount</th>
+
+                    <th>Status</th>
+
+                </tr>
+
+                <tr>
+
+                    <td>15 July 2026</td>
+
+                    <td>Saba Nadeem</td>
+
+                    <td>Tailoring</td>
+
+                    <td>Rs.2500</td>
+
+                    <td><span class="paid">Paid</span></td>
+
+                </tr>
+
+                <tr>
+
+                    <td>16 July 2026</td>
+
+                    <td>Ahmed Khan</td>
+
+                    <td>Tailoring</td>
+
+                    <td>Rs.1800</td>
+
+                    <td><span class="paid">Paid</span></td>
+
+                                <tr>
+
+                    <td>18 July 2026</td>
+
+                    <td>Sarah Ali</td>
+
+                    <td>Tailoring</td>
+
+                    <td>Rs.3200</td>
+
+                    <td><span class="paid">Paid</span></td>
+
+                </tr>
+
+                <tr>
+
+                    <td>20 July 2026</td>
+
+                    <td>Ali Raza</td>
+
+                    <td>Tailoring</td>
+
+                    <td>Rs.4000</td>
+
+                    <td><span class="paid">Paid</span></td>
+
+                </tr>
+
+            </table>
+
+        </div>
+
+        <!-- Withdraw Section -->
+
+        <div class="withdraw-card">
+
+            <h2>Withdraw Earnings</h2>
+
+            <p>Your Available Balance</p>
+
+            <h1>Rs. 85,000</h1>
+
+            <button id="withdrawBtn">
+
+                Withdraw Now
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script >
+// ===================================
+// Provider Earnings JavaScript
+// ===================================
+
+// Withdraw Button
+
+const withdrawBtn = document.getElementById("withdrawBtn");
+
+if(withdrawBtn){
+
+    withdrawBtn.addEventListener("click", function(){
+
+        let confirmWithdraw = confirm("Do you want to withdraw your earnings?");
+
+        if(confirmWithdraw){
+
+            alert("Withdrawal Request Submitted Successfully!");
+
+        }
+
+    });
+
+}
+
+
+// Logout Confirmation
+
+const logout = document.querySelector('a[href="login.html"]');
+
+if(logout){
+
+    logout.addEventListener("click", function(e){
+
+        let confirmLogout = confirm("Are you sure you want to logout?");
+
+        if(!confirmLogout){
+
+            e.preventDefault();
+
+        }
+
+    });
+
+}
+
+
+// Sidebar Active Menu
+
+const menuItems = document.querySelectorAll(".sidebar ul li");
+
+menuItems.forEach(function(item){
+
+    item.addEventListener("click", function(){
+
+        menuItems.forEach(function(i){
+
+            i.classList.remove("active");
+
+        });
+
+        this.classList.add("active");
+
+    });
+
+});
+
+
+// Card Animation
+
+const cards = document.querySelectorAll(".card");
+
+cards.forEach(function(card){
+
+    card.addEventListener("mouseenter", function(){
+
+        card.style.transform = "translateY(-8px)";
+
+    });
+
+    card.addEventListener("mouseleave", function(){
+
+        card.style.transform = "translateY(0)";
+
+    });
+
+});
+
+
+// Page Loaded
+
+window.onload = function(){
+
+    console.log("Provider Earnings Page Loaded Successfully");
+
+};
+</script>
+
+</body>
+
+</html>

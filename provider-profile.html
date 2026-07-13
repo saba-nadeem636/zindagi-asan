@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Provider Profile | Zindagi Asan</title>
+
+<style>
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f7fb;
+}
+
+/* Header */
+
+.header{
+    width:100%;
+    background:#2a9085;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 50px;
+}
+
+.header h2{
+    font-size:28px;
+}
+
+.header nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+    font-size:17px;
+    transition:.3s;
+}
+
+.header nav a:hover,
+.header nav .active{
+    color:#ffe082;
+}
+
+
+/* Profile Container */
+
+.profile-container{
+    width:90%;
+    margin:40px auto;
+    display:flex;
+    gap:30px;
+}
+
+/* Left Card */
+
+.profile-card{
+    width:30%;
+    background:white;
+    border-radius:15px;
+    padding:30px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.profile-card img{
+    width:170px;
+    height:170px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid #2a9085;
+}
+
+.profile-card h2{
+    margin-top:20px;
+    color:#2a9085;
+}
+
+.profile-card p{
+    color:#666;
+    margin-top:8px;
+}
+
+/* Change Photo Button */
+
+.change-btn{
+    margin-top:20px;
+    padding:10px 20px;
+    background:#2a9085;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.change-btn:hover{
+    background:#1f6f67;
+}
+
+
+/* Right Side */
+
+.profile-details{
+    width:70%;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.profile-details h2{
+    color:#2a9085;
+    margin-bottom:25px;
+}
+
+.profile-details label{
+    display:block;
+    margin-top:15px;
+    margin-bottom:8px;
+    font-weight:bold;
+}
+
+.profile-details input,
+.profile-details textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    outline:none;
+    font-size:15px;
+}
+
+.profile-details textarea{
+    resize:none;
+}
+
+#saveBtn{
+    margin-top:25px;
+    background:#2a9085;
+    color:white;
+    border:none;
+    padding:14px 30px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+#saveBtn:hover{
+    background:#1f6f67;
+}
+
+
+/* Responsive */
+
+@media(max-width:900px){
+
+.profile-container{
+    flex-direction:column;
+}
+
+.profile-card,
+.profile-details{
+    width:100%;
+}
+
+.header{
+    flex-direction:column;
+    gap:15px;
+}
+
+.header nav{
+    text-align:center;
+}
+
+.header nav a{
+    display:inline-block;
+    margin:10px;
+}
+
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+    <h2>Zindagi <span style="color: #FFD54F;">Asan</span></h2>
+
+    <nav>
+        <a href="provider-dashboard.html">Dashboard</a>
+        <a href="provider-bookings.html">Bookings</a>
+        <a href="provider-profile.html" class="active">Profile</a>
+        <a href="provider-logout.html">Logout</a>
+    </nav>
+</header>
+
+<section class="profile-container">
+
+    <div class="profile-card">
+
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Profile">
+
+        <button class="change-btn">Change Photo</button>
+
+        <h2>Ali Tailor</h2>
+
+        <p>Professional Tailor</p>
+
+    </div>
+
+
+    <div class="profile-details">
+
+        <h2>My Profile</h2>
+
+        <form>
+
+            <label>Full Name</label>
+            <input type="text" value="Ali Tailor">
+
+            <label>Phone Number</label>
+            <input type="text" value="03001234567">
+
+            <label>Email</label>
+            <input type="email" value="ali@gmail.com">
+
+            <label>City</label>
+            <input type="text" value="Karachi">
+
+            <label>Experience</label>
+            <input type="text" value="5 Years">
+
+            <label>Service</label>
+            <input type="text" value="Tailoring">
+
+            <label>About</label>
+            <textarea rows="5">Professional tailoring services at affordable prices.</textarea>
+
+            <button type="button" id="saveBtn">Save Changes</button>
+
+        </form>
+
+    </div>
+
+</section>
+
+<script>
+    // Save Profile
+
+document.getElementById("saveBtn").addEventListener("click", function () {
+
+    alert("✅ Profile Updated Successfully!");
+
+});
+
+
+// Change Profile Photo
+
+document.querySelector(".change-btn").addEventListener("click", function () {
+
+    document.getElementById("profileUpload").click();
+
+});
+
+
+document.getElementById("profileUpload").addEventListener("change", function (event) {
+
+    const file = event.target.files[0];
+
+    if(file){
+
+        const reader = new FileReader();
+
+        reader.onload = function(e){
+
+            document.getElementById("profileImage").src = e.target.result;
+
+        }
+
+        reader.readAsDataURL(file);
+
+    }
+
+});
+</script>
+
+</body>
+</html>

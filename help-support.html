@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Help & Support</title>
+
+   <style>
+    /* =========================
+   HELP SUPPORT CSS
+========================= */
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+
+body{
+
+    background:#f5f7fb;
+
+}
+
+
+
+/* Header */
+
+header{
+
+    height:70px;
+
+    background:#2a9085;
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 50px;
+
+}
+
+
+
+.logo{
+
+    font-size:28px;
+
+    font-weight:bold;
+
+}
+
+
+
+header a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:16px;
+
+}
+
+
+
+header a:hover{
+
+    color:#ffe082;
+
+}
+
+
+
+
+/* Help Page */
+
+
+.help-page{
+
+    width:80%;
+
+    margin:50px auto;
+
+}
+
+
+
+.help-page h1{
+
+    font-size:35px;
+
+    color:#333;
+
+    margin-bottom:10px;
+
+}
+
+
+
+.help-page > p{
+
+    color:#777;
+
+    margin-bottom:30px;
+
+}
+
+
+
+
+/* Help Box */
+
+
+.help-box{
+
+    background:white;
+
+    border-radius:15px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+
+    overflow:hidden;
+
+}
+
+
+
+
+/* Help Items */
+
+
+.help-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:25px 30px;
+
+    border-bottom:1px solid #eee;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+}
+
+
+
+.help-item:hover{
+
+    background:#f0fdfb;
+
+}
+
+
+
+.help-item h3{
+
+    color:#333;
+
+    font-size:20px;
+
+    margin-bottom:8px;
+
+}
+
+
+
+.help-item p{
+
+    color:#777;
+
+    font-size:14px;
+
+}
+
+
+
+.help-item span{
+
+    font-size:30px;
+
+}
+
+
+
+
+/* Mobile */
+
+@media(max-width:600px){
+
+
+    .help-page{
+
+        width:90%;
+
+    }
+
+
+    header{
+
+        padding:0 20px;
+
+    }
+
+
+    .help-item{
+
+        padding:20px;
+
+    }
+
+}
+   </style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div class="logo">
+        Zindagi <span style="color: #FFD54F;">Asan</span>
+    </div>
+
+
+    <a href="provider-setting.html">
+        ← Back
+    </a>
+
+</header>
+
+
+
+
+<section class="help-page">
+
+
+    <h1>
+        Help & Support
+    </h1>
+
+
+    <p>
+        Get help and contact our support team
+    </p>
+
+
+
+
+    <div class="help-box">
+
+
+        <div class="help-item">
+
+
+            <div>
+
+                <h3>
+                    Contact Support
+                </h3>
+
+
+                <p>
+                    Need help? Contact our support team
+                </p>
+
+            </div>
+
+
+            <span>
+                📞
+            </span>
+
+
+        </div>
+
+
+
+
+
+        <div class="help-item">
+
+
+            <div>
+
+                <h3>
+                    Frequently Asked Questions
+                </h3>
+
+
+                <p>
+                    Find answers to common questions
+                </p>
+
+            </div>
+
+
+            <span>
+                ❓
+            </span>
+
+
+        </div>
+
+
+
+
+
+        <div class="help-item">
+
+
+            <div>
+
+                <h3>
+                    Report a Problem
+                </h3>
+
+
+                <p>
+                    Tell us about any issue
+                </p>
+
+            </div>
+
+
+            <span>
+                ⚠️
+            </span>
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+</section>
+
+
+
+<script>
+/* =========================
+   HELP SUPPORT JS
+========================= */
+
+
+let helpItems = document.querySelectorAll(".help-item");
+
+
+
+
+// Contact Support
+
+helpItems[0].addEventListener("click", function(){
+
+    alert("Contacting Support Team");
+
+});
+
+
+
+
+// FAQ
+
+helpItems[1].addEventListener("click", function(){
+
+    alert("Opening Frequently Asked Questions");
+
+});
+
+
+
+
+// Report Problem
+
+helpItems[2].addEventListener("click", function(){
+
+    alert("Report your problem here");
+
+});
+</script>
+
+
+</body>
+
+</html>

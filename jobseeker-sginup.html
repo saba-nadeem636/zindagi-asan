@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Job Seeker Signup | Zindagi Asan</title>
+
+    <style>
+        *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f7fc;
+}
+
+.container{
+    width:100%;
+    min-height:100vh;
+    display:flex;
+}
+
+/* Left Side */
+
+.left-side{
+    width:40%;
+    background:#2a9085;
+    color:#fff;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:40px;
+    text-align:center;
+}
+
+.left-side h1{
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.left-side h2{
+    font-size:30px;
+    margin-bottom:15px;
+}
+
+.left-side p{
+    font-size:18px;
+    line-height:28px;
+    margin-bottom:30px;
+}
+
+.left-side img{
+    width:250px;
+}
+
+/* Right Side */
+
+.right-side{
+    width:60%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px;
+}
+
+form{
+    width:100%;
+    max-width:550px;
+    background:#fff;
+    padding:35px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+form h2{
+    text-align:center;
+    color:#2a9085;
+    margin-bottom:25px;
+}
+
+.input-box{
+    position:relative;
+    margin-bottom:18px;
+}
+
+.input-box i{
+    position:absolute;
+    left:15px;
+    top:16px;
+    color:#2a9085;
+}
+
+.input-box input,
+.input-box select,
+.input-box textarea{
+    width:100%;
+    padding:14px 14px 14px 45px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    outline:none;
+    font-size:15px;
+}
+
+.input-box textarea{
+    resize:none;
+}
+
+.input-box input:focus,
+.input-box select:focus,
+.input-box textarea:focus{
+    border-color:#2a9085;
+}
+/* Upload Label */
+
+.input-box label{
+    display:block;
+    margin-bottom:8px;
+    color:#333;
+    font-weight:600;
+}
+
+/* Password */
+
+.password-box{
+    position:relative;
+}
+
+.toggle-password{
+    position:absolute;
+    right:15px;
+    top:16px;
+    cursor:pointer;
+    color:#2a9085;
+    font-size:18px;
+}
+
+/* Checkbox */
+
+.checkbox{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin:15px 0;
+}
+
+.checkbox input{
+    width:18px;
+    height:18px;
+    cursor:pointer;
+}
+
+.checkbox label{
+    font-size:14px;
+    color:#555;
+}
+
+/* Signup Button */
+
+.signup-btn{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:8px;
+    background:#2a9085;
+    color:#fff;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.signup-btn:hover{
+    background:#1f6f67;
+    transform:translateY(-2px);
+}
+
+/* Login */
+
+.login-text{
+    text-align:center;
+    margin-top:20px;
+    font-size:15px;
+}
+
+.login-text a{
+    text-decoration:none;
+    color:#2a9085;
+    font-weight:bold;
+}
+
+.login-text a:hover{
+    text-decoration:underline;
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+.container{
+    flex-direction:column;
+}
+
+.left-side,
+.right-side{
+    width:100%;
+}
+
+.left-side{
+    padding:30px;
+}
+
+.left-side img{
+    width:180px;
+}
+
+.right-side{
+    padding:20px;
+}
+
+form{
+    padding:25px;
+}
+
+}
+    </style>
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Left Side -->
+
+    <div class="left-side">
+
+        <h1>Zindagi <span style="color: #FFD54F;">Asan</span></h1>
+
+        <h2>Create Provider Account</h2>
+
+        <p>
+
+            Join Zindagi Asan and start earning by providing your professional services.
+
+        </p>
+
+    </div>
+
+    <!-- Right Side -->
+
+    <div class="right-side">
+
+        <form id="signupForm">
+
+            <h2>Create Account</h2>
+
+            <div class="input-box">
+
+                <i class="fa-solid fa-user"></i>
+
+                <input
+                type="text"
+                id="fullname"
+                placeholder="Full Name"
+                required>
+
+            </div>
+
+            <div class="input-box">
+
+                <i class="fa-solid fa-envelope"></i>
+
+                <input
+                type="email"
+                id="email"
+                placeholder="Email Address"
+                required>
+
+            </div>
+
+            <div class="input-box">
+
+                <i class="fa-solid fa-phone"></i>
+
+                <input
+                type="tel"
+                id="phone"
+                placeholder="Phone Number"
+                required>
+
+            </div>
+
+            <div class="input-box">
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                <input
+                type="text"
+                id="city"
+                placeholder="City"
+                required>
+
+            </div>
+
+            <div class="input-box">
+
+                <i class="fa-solid fa-location-crosshairs"></i>
+
+                <textarea
+                id="address"
+                placeholder="Complete Address"
+                rows="3"
+                required></textarea>
+
+            </div>
+
+            <div class="input-box">
+
+                <i class="fa-solid fa-briefcase"></i>
+
+                <select id="service" required>
+
+                    <option value="">Select Your Service</option>
+
+                    <option>Tailoring</option>
+
+                    <option>Home Cleaning</option>
+
+                    <option>Homemade Food</option>
+
+                    <option>Electrician</option>
+
+                    <option>Plumber</option>
+
+                    <option>AC Repair</option>
+
+                    <option>Beauty Services</option>
+
+                    <option>Mehndi Artist</option>
+
+                    <option>Tutor</option>
+
+                    <option>Handicraft</option>
+
+                    <option>Graphic Designer</option>
+
+                    <option>Web Developer</option>
+
+                    <option>Photographer</option>
+
+                    <option>Driver</option>
+
+                    <option>Makeup Artist</option>
+
+                </select>
+
+            </div>
+                        <div class="input-box">
+
+                <i class="fa-solid fa-award"></i>
+
+                <input
+                type="text"
+                id="experience"
+                placeholder="Experience (e.g. 5 Years)"
+                required>
+
+            </div>
+
+            <div class="input-box">
+
+                <label>Upload Profile Photo</label>
+
+                <input
+                type="file"
+                id="profile"
+                accept="image/*">
+
+            </div>
+
+            <div class="input-box password-box">
+
+                <i class="fa-solid fa-lock"></i>
+
+                <input
+                type="password"
+                id="password"
+                placeholder="Password"
+                required>
+
+                <span class="toggle-password">
+                    <i class="fa-solid fa-eye"></i>
+                </span>
+
+            </div>
+
+            <div class="input-box password-box">
+
+                <i class="fa-solid fa-lock"></i>
+
+                <input
+                type="password"
+                id="confirmPassword"
+                placeholder="Confirm Password"
+                required>
+
+            </div>
+
+            <div class="checkbox">
+
+                <input
+                type="checkbox"
+                id="terms"
+                required>
+
+                <label for="terms">
+                    I agree to the Terms & Conditions
+                </label>
+
+            </div>
+
+            <button
+                type="submit"
+                class="signup-btn">
+
+                Create Account
+
+            </button>
+
+            <p class="login-text">
+
+                Already have an account?
+
+                <a href="jobseeker.html">
+                    Login
+                </a>
+
+            </p>
+
+        </form>
+
+    </div>
+
+</div>
+
+<script >
+    // ================================
+// Job Seeker Signup JavaScript
+// ================================
+
+// Show / Hide Password
+
+const togglePassword = document.querySelector(".toggle-password");
+const passwordField = document.getElementById("password");
+
+togglePassword.addEventListener("click", function () {
+
+    if (passwordField.type === "password") {
+        passwordField.type = "text";
+        this.innerHTML = '<i class="fa-solid fa-eye-slash"></i>';
+    } else {
+        passwordField.type = "password";
+        this.innerHTML = '<i class="fa-solid fa-eye"></i>';
+    }
+
+});
+
+// Signup Form
+
+document.getElementById("signupForm").addEventListener("submit", function (e) {
+
+    e.preventDefault();
+
+    let fullName = document.getElementById("fullname").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let phone = document.getElementById("phone").value.trim();
+    let city = document.getElementById("city").value.trim();
+    let address = document.getElementById("address").value.trim();
+    let service = document.getElementById("service").value;
+    let experience = document.getElementById("experience").value.trim();
+    let password = document.getElementById("password").value;
+    let confirmPassword = document.getElementById("confirmPassword").value;
+    let terms = document.getElementById("terms").checked;
+
+    if (
+        fullName === "" ||
+        email === "" ||
+        phone === "" ||
+        city === "" ||
+        address === "" ||
+        service === "" ||
+        experience === "" ||
+        password === "" ||
+        confirmPassword === ""
+    ) {
+        alert("Please fill all fields.");
+        return;
+    }
+
+    if (password !== confirmPassword) {
+        alert("Passwords do not match.");
+        return;
+    }
+
+    if (!terms) {
+        alert("Please accept Terms & Conditions.");
+        return;
+    }
+
+    alert("Account Created Successfully!");
+
+    // Redirect to Provider Dashboard
+    window.location.href = "provider-dashboard.html";
+
+});
+</script>
+
+</body>
+</html>

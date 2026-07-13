@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Privacy & Security</title>
+</head>
+
+
+<body>
+<style>
+    /* =========================
+   PRIVACY SECURITY CSS
+========================= */
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+
+body{
+
+    background:#f5f7fb;
+
+}
+
+
+
+/* Header */
+
+header{
+
+    height:70px;
+
+    background:#2a9085;
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 50px;
+
+}
+
+
+
+.logo{
+
+    font-size:28px;
+
+    font-weight:bold;
+
+}
+
+
+
+header a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:16px;
+
+}
+
+
+header a:hover{
+
+    color:#ffe082;
+
+}
+
+
+
+
+/* Privacy Page */
+
+
+.privacy-page{
+
+    width:80%;
+
+    margin:50px auto;
+
+}
+
+
+
+.privacy-page h1{
+
+    font-size:35px;
+
+    color:#333;
+
+    margin-bottom:10px;
+
+}
+
+
+
+.privacy-page > p{
+
+    color:#777;
+
+    margin-bottom:30px;
+
+}
+
+
+
+
+
+/* Privacy Box */
+
+
+.privacy-box{
+
+    background:white;
+
+    border-radius:15px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+
+    overflow:hidden;
+
+}
+
+
+
+
+/* Privacy Items */
+
+
+.privacy-item{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:25px 30px;
+
+    border-bottom:1px solid #eee;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+}
+
+
+
+.privacy-item:hover{
+
+    background:#f0fdfb;
+
+}
+
+
+
+.privacy-item h3{
+
+    color:#333;
+
+    font-size:20px;
+
+    margin-bottom:8px;
+
+}
+
+
+
+.privacy-item p{
+
+    color:#777;
+
+    font-size:14px;
+
+}
+
+
+
+.privacy-item span{
+
+    font-size:30px;
+
+}
+
+
+
+
+/* Mobile */
+
+@media(max-width:600px){
+
+
+    .privacy-page{
+
+        width:90%;
+
+    }
+
+
+    header{
+
+        padding:0 20px;
+
+    }
+
+
+    .privacy-item{
+
+        padding:20px;
+
+    }
+
+}
+</style>
+
+<header>
+
+    <div class="logo">
+        Zindagi <span style="color: #FFD54F;">Asan</span>
+    </div>
+
+
+    <a href="provider-setting.html">
+        ← Back
+    </a>
+
+</header>
+
+
+
+
+<section class="privacy-page">
+
+
+    <h1>
+        Privacy & Security
+    </h1>
+
+    <p>
+        Manage your account privacy and security
+    </p>
+
+
+
+
+    <div class="privacy-box">
+
+
+
+        <div class="privacy-item">
+
+            <div>
+
+                <h3>Account Security</h3>
+
+                <p>
+                    Keep your account safe and secure
+                </p>
+
+            </div>
+
+            <span>
+                🔒
+            </span>
+
+        </div>
+
+
+
+
+
+        <div class="privacy-item">
+
+            <div>
+
+                <h3>Privacy Policy</h3>
+
+                <p>
+                    Read our privacy rules and policies
+                </p>
+
+            </div>
+
+            <span>
+                📄
+            </span>
+
+        </div>
+
+
+
+
+
+        <div class="privacy-item">
+
+            <div>
+
+                <h3>Data Protection</h3>
+
+                <p>
+                    Your information is protected with us
+                </p>
+
+            </div>
+
+            <span>
+                🛡️
+            </span>
+
+        </div>
+
+
+
+
+    </div>
+
+
+</section>
+
+
+
+<script>
+/* =========================
+   PRIVACY SECURITY JS
+========================= */
+
+
+let privacyItems = document.querySelectorAll(".privacy-item");
+
+
+
+// Account Security
+
+privacyItems[0].addEventListener("click", function(){
+
+    alert("Account Security Settings");
+
+});
+
+
+
+
+// Privacy Policy
+
+privacyItems[1].addEventListener("click", function(){
+
+    alert("Opening Privacy Policy");
+
+});
+
+
+
+
+// Data Protection
+
+privacyItems[2].addEventListener("click", function(){
+
+    alert("Your data is protected");
+
+});
+</script>
+
+
+</body>
+
+</html>

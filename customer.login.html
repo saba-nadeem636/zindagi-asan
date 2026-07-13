@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Customer Login | Zindagi Asan</title>
+
+    <!-- CSS -->
+    <style>/*====================================================
+           CUSTOMER LOGIN PAGE
+====================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    background:#f5f7fb;
+
+    color:#333;
+
+}
+
+.navbar{
+
+    width:100%;
+
+    height:75px;
+
+    background:#fff;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 80px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+}
+
+.logo{
+
+    font-size:30px;
+
+    font-weight:700;
+
+    color:#0F9D58;
+
+}
+
+.logo span{
+
+    color:#FFD54F;
+
+}
+
+.navbar ul{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:35px;
+
+}
+
+.navbar ul li a{
+
+    text-decoration:none;
+
+    color:#333;
+
+    font-size:16px;
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+.navbar ul li a:hover{
+
+    color:#0F9D58;
+
+}
+.login-page{
+
+    width:100%;
+    min-height:100vh;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+
+}
+
+/*============================
+Left Side
+============================*/
+
+.login-left{
+
+    position:relative;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:linear-gradient(135deg,#0F9D58,#1565C0);
+
+    overflow:hidden;
+
+}
+
+.login-left::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+    height:300px;
+
+    background:rgba(255,255,255,.12);
+
+    border-radius:50%;
+
+    top:-100px;
+    left:-100px;
+
+}
+
+.login-left::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:250px;
+    height:250px;
+
+    background:rgba(255,255,255,.08);
+
+    border-radius:50%;
+
+    bottom:-70px;
+    right:-70px;
+
+}
+
+.left-content{
+
+    position:relative;
+
+    z-index:10;
+
+    text-align:center;
+
+    color:#fff;
+
+    width:80%;
+
+}
+
+.left-content h1{
+
+    font-size:55px;
+
+    margin-bottom:15px;
+
+}
+
+.left-content span{
+
+    color:#FFD54F;
+
+}
+
+.left-content h2{
+
+    font-size:35px;
+
+    margin-bottom:20px;
+
+}
+
+.left-content p{
+
+    font-size:18px;
+
+    line-height:32px;
+
+}
+
+/*============================
+Right Side
+============================*/
+
+.login-right{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#f5f7fb;
+
+    padding:40px;
+
+}
+
+/*============================
+Login Card
+============================*/
+
+.login-form{
+
+    width:100%;
+
+    max-width:450px;
+
+    background:#fff;
+
+    padding:40px;
+
+    border-radius:20px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+}
+
+.back-btn{
+
+    text-decoration:none;
+
+    color:#1565C0;
+
+    font-weight:600;
+
+}
+
+.login-form h2{
+
+    margin-top:20px;
+
+    font-size:35px;
+
+    color:#222;
+
+}
+
+.login-text{
+
+    color:#666;
+
+    margin:10px 0 30px;
+
+}
+
+/*============================
+Input Fields
+============================*/
+
+.input-box{
+
+    margin-bottom:22px;
+
+}
+
+.input-box label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-weight:600;
+
+}
+
+.input-field{
+
+    display:flex;
+
+    align-items:center;
+
+    border:1px solid #ddd;
+
+    border-radius:10px;
+
+    overflow:hidden;
+
+    background:#fff;
+
+}
+
+.input-field i{
+
+    padding:15px;
+
+    color:#777;
+
+}
+
+.input-field input{
+
+    width:100%;
+
+    border:none;
+
+    outline:none;
+
+    padding:15px 10px;
+
+    font-size:16px;
+
+}
+
+/*============================
+Remember
+============================*/
+
+.remember{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:30px;
+
+    font-size:14px;
+
+}
+
+.remember a{
+
+    color:#1565C0;
+
+    text-decoration:none;
+
+}
+
+/*============================
+Button
+============================*/
+
+.login-button{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:#0F9D58;
+
+    color:#fff;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.login-button:hover{
+
+    background:#0c7c46;
+
+    transform:translateY(-3px);
+
+}
+
+/*============================
+Signup
+============================*/
+
+.signup-link{
+
+    text-align:center;
+
+    margin-top:25px;
+
+}
+
+.signup-link a{
+
+    text-decoration:none;
+
+    color:#1565C0;
+
+    font-weight:600;
+
+}
+
+/*============================
+Responsive
+============================*/
+
+@media(max-width:900px){
+
+.login-page{
+
+    grid-template-columns:1fr;
+
+}
+
+.login-left{
+
+    display:none;
+
+}
+
+.login-right{
+
+    padding:25px;
+
+}
+
+.login-form{
+
+    padding:30px;
+
+}
+/*==========================
+Login Message
+==========================*/
+
+.message{
+
+    display:none;
+
+    margin-bottom:20px;
+
+    padding:14px;
+
+    border-radius:10px;
+
+    font-size:15px;
+
+    font-weight:500;
+
+}
+
+.message.error{
+
+    display:block;
+
+    background:#ffe5e5;
+
+    color:#d32f2f;
+
+    border-left:5px solid #d32f2f;
+
+}
+
+.message.success{
+
+    display:block;
+
+    background:#e8f5e9;
+
+    color:#0f9d58;
+
+    border-left:5px solid #0f9d58;
+
+}
+
+}</style>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<!--==========================
+Customer Login Section
+===========================-->
+<header class="navbar">
+
+    <div class="logo">
+
+        Zindagi <span style="color: #FFD54F;">Asan</span>
+
+    </div>
+
+    <ul>
+
+        <li><a href="welcome.html">Home</a></li>
+
+        <li><a href="customer.html">Customer</a></li>
+
+        <li><a href="about.html">About</a></li>
+
+        <li><a href="contact.html">Contact</a></li>
+
+    </ul>
+
+</header>
+<section class="login-page">
+
+    <!-- Left Side -->
+
+    <div class="login-left">
+
+        <div class="overlay"></div>
+
+        <div class="left-content">
+
+            <h1>Zindagi  <span style="color: #FFD54F;">Asan</span></h1>
+
+            <h2>Welcome Back!</h2>
+
+            <p>
+
+                Login as a Customer to hire trusted workers,
+                book home services and manage your bookings easily.
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- Right Side -->
+
+    <div class="login-right">
+
+        <form class="login-form">
+
+            <a href="welcome.html" class="back-btn">
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+                Back
+
+            </a>
+
+            <h2>Customer Login</h2>
+
+            <p class="login-text">
+
+                Login to continue.
+
+            </p>
+
+            <!-- Email -->
+
+            <div class="input-box">
+
+                <label>Email Address</label>
+
+                <div class="input-field">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    <input
+                    type="email"
+                    placeholder="Enter your email"
+                    required>
+
+                </div>
+
+            </div>
+
+            <!-- Password -->
+
+            <div class="input-box">
+
+                <label>Password</label>
+
+                <div class="input-field">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter your password"
+                    required>
+
+                    <i
+                    class="fa-solid fa-eye"
+                    id="togglePassword"></i>
+
+                </div>
+
+            </div>
+        
+<div class="message" id="message">
+<div class="remember">
+
+    <label>
+
+        <input type="checkbox">
+
+        Remember Me
+
+    </label>
+
+    <a href="forgot-password.html">Forgot Password?</a>
+
+</div>
+
+<!-- Message -->
+
+<div class="message" id="message"></div>
+
+<!-- Login Button -->
+
+<button type="submit" class="login-button">
+
+    Login
+
+</button>
+</div>
+
+
+            <div class="signup-link">
+
+                Don't have an account?
+
+                <a href="customer-signup.html">
+
+                    Sign Up
+
+                </a>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</section>
+
+<script > 
+    /*====================================================
+        CUSTOMER LOGIN JAVASCRIPT
+====================================================*/
+
+// Password Show / Hide
+
+const togglePassword = document.getElementById("togglePassword");
+const password = document.getElementById("password");
+
+if (togglePassword && password) {
+
+    togglePassword.addEventListener("click", function () {
+
+        const type = password.getAttribute("type") === "password"
+            ? "text"
+            : "password";
+
+        password.setAttribute("type", type);
+
+        this.classList.toggle("fa-eye");
+        this.classList.toggle("fa-eye-slash");
+
+    });
+
+}
+
+
+
+// Login Form Validation
+
+const loginForm = document.querySelector(".login-form");
+
+if (loginForm) {
+
+    loginForm.addEventListener("submit", function (e) {
+
+        e.preventDefault();
+
+        const email = document.querySelector("input[type='email']").value.trim();
+        const pass = password.value.trim();
+
+        if (email === "" || pass === "") {
+
+            alert("Please fill in all fields.");
+
+            return;
+
+        }
+
+        alert("Login Successful!");
+
+        // Redirect to Customer Dashboard
+        window.location.href = "customer.html";
+
+    });
+
+}
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Customer Sign Up | Zindagi Asan</title>
+
+    <style>
+/* ==========================================
+   ZINDAGI ASAN
+   CUSTOMER SIGNUP PAGE
+========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f5f7fb;
+}
+
+/*==========================
+Signup Page
+==========================*/
+
+.signup-page{
+
+    width:100%;
+    min-height:100vh;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+
+}
+
+/*==========================
+Left Side
+==========================*/
+
+.signup-left{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:linear-gradient(135deg,#0F9D58,#1565C0);
+
+    color:#fff;
+
+    padding:60px;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.signup-left::before{
+
+    content:"";
+
+    width:300px;
+    height:300px;
+
+    background:rgba(255,255,255,.10);
+
+    position:absolute;
+
+    top:-100px;
+    left:-100px;
+
+    border-radius:50%;
+
+}
+
+.signup-left::after{
+
+    content:"";
+
+    width:250px;
+    height:250px;
+
+    background:rgba(255,255,255,.08);
+
+    position:absolute;
+
+    bottom:-80px;
+    right:-80px;
+
+    border-radius:50%;
+
+}
+
+.left-content{
+
+    text-align:center;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.left-content h1{
+
+    font-size:60px;
+
+    margin-bottom:15px;
+
+}
+
+.left-content span{
+
+    color:#FFD54F;
+
+}
+
+.left-content h2{
+
+    font-size:40px;
+
+    margin-bottom:20px;
+
+}
+
+.left-content p{
+
+    font-size:18px;
+
+    line-height:32px;
+
+}
+
+/*==========================
+Right Side
+==========================*/
+
+.signup-right{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:40px;
+
+}
+
+.signup-form{
+
+    width:100%;
+    max-width:500px;
+
+    background:#fff;
+
+    padding:40px;
+
+    border-radius:20px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.10);
+
+}
+
+.back-btn{
+
+    text-decoration:none;
+
+    color:#1565C0;
+
+    font-weight:600;
+
+}
+
+.signup-form h2{
+
+    margin-top:20px;
+
+    font-size:35px;
+
+    color:#222;
+
+}
+
+.signup-text{
+
+    color:#666;
+
+    margin:15px 0 30px;
+
+}
+
+/*==========================
+Input Fields
+==========================*/
+
+.input-box{
+
+    margin-bottom:20px;
+
+}
+
+.input-box label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-weight:600;
+
+    color:#333;
+
+}
+
+.input-field{
+
+    display:flex;
+
+    align-items:center;
+
+    border:1px solid #ddd;
+
+    border-radius:10px;
+
+    overflow:hidden;
+
+    background:#fff;
+
+}
+
+.input-field i{
+
+    padding:15px;
+
+    color:#666;
+
+}
+
+.input-field input{
+
+    width:100%;
+
+    border:none;
+
+    outline:none;
+
+    padding:15px;
+
+    font-size:16px;
+
+}
+
+/*==========================
+Terms
+==========================*/
+
+.remember{
+
+    margin:20px 0;
+
+    font-size:15px;
+
+}
+
+.remember input{
+
+    margin-right:8px;
+
+}
+
+/*==========================
+Button
+==========================*/
+
+.login-button{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:#0F9D58;
+
+    color:#fff;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.login-button:hover{
+
+    background:#087844;
+
+}
+
+/*==========================
+Login Link
+==========================*/
+
+.signup-link{
+
+    text-align:center;
+
+    margin-top:25px;
+
+    font-size:16px;
+
+}
+
+.signup-link a{
+
+    color:#1565C0;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+}
+
+/*==========================
+Responsive
+==========================*/
+
+@media(max-width:900px){
+
+.signup-page{
+
+    grid-template-columns:1fr;
+
+}
+
+.signup-left{
+
+    display:none;
+
+}
+
+.signup-right{
+
+    padding:20px;
+
+}
+
+.signup-form{
+
+    padding:30px;
+
+}
+
+
+
+
+}
+    </style>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+
+</head>
+
+<body>
+
+<section class="signup-page">
+
+    <!-- Left Side -->
+
+    <div class="signup-left">
+
+        <div class="left-content">
+
+            <h1>Zindagi <span style="color: #FFD54F;">Asan</span></h1>
+
+            <h2>Create Your Customer Account</h2>
+
+            <p>
+
+                Join Zindagi Asan and hire trusted workers
+                for your home and business anytime, anywhere.
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- Right Side -->
+
+    <div class="signup-right">
+
+        <form class="signup-form">
+
+            <a href="customer.login.html" class="back-btn">
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+                Back to Login
+
+            </a>
+
+            <h2>Create Account</h2>
+
+            <p class="signup-text">
+
+                Please fill in your details.
+
+            </p>
+
+            <!-- Full Name -->
+
+            <div class="input-box">
+
+                <label>Full Name</label>
+
+                <div class="input-field">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <input
+                    type="text"
+                    placeholder="Enter your full name"
+                    required>
+
+                </div>
+
+            </div>
+
+            <!-- Email -->
+
+            <div class="input-box">
+
+                <label>Email Address</label>
+
+                <div class="input-field">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    <input
+                    type="email"
+                    placeholder="Enter your email"
+                    required>
+
+                </div>
+
+            </div>
+
+            <!-- Phone -->
+
+            <div class="input-box">
+
+                <label>Phone Number</label>
+
+                <div class="input-field">
+
+                    <i class="fa-solid fa-phone"></i>
+
+                    <input
+                    type="tel"
+                    placeholder="03XXXXXXXXX"
+                    required>
+
+                </div>
+
+            </div>
+
+            <!-- City -->
+
+            <div class="input-box">
+
+                <label>City</label>
+
+                <div class="input-field">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    <input
+                    type="text"
+                    placeholder="Enter your city"
+                    required>
+
+                </div>
+
+            </div>
+
+            <!-- Password -->
+
+            <div class="input-box">
+
+                <label>Password</label>
+
+                <div class="input-field">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    <input
+                    type="password"
+                    id="signupPassword"
+                    placeholder="Create password"
+                    required>
+
+                    <i class="fa-solid fa-eye" id="signupTogglePassword"></i>
+
+                </div>
+
+            </div>
+
+            <!-- Confirm Password -->
+
+            <div class="input-box">
+
+                <label>Confirm Password</label>
+
+                <div class="input-field">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    <input
+                    type="password"
+                    id="confirmPassword"
+                    placeholder="Confirm password"
+                    required>
+
+                </div>
+
+            </div>
+
+            <!-- Terms -->
+
+            <div class="remember">
+
+                <label>
+
+                    <input type="checkbox" required>
+
+                    I agree to the Terms & Conditions
+
+                </label>
+
+            </div>
+
+            <!-- Signup Button -->
+
+            <button
+            type="submit"
+            class="login-button">
+
+                Create Account
+
+            </button>
+
+            <div class="signup-link">
+
+                Already have an account?
+
+                <a href="customer.login.html">
+
+                    Login
+
+                </a>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</section>
+
+<script >
+    /*=========================================
+      ZINDAGI ASAN
+      CUSTOMER SIGNUP
+=========================================*/
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const form = document.querySelector(".signup-form");
+
+    const password = document.getElementById("signupPassword");
+    const confirmPassword = document.getElementById("confirmPassword");
+    const togglePassword = document.getElementById("signupTogglePassword");
+
+    // ==========================
+    // Show / Hide Password
+    // ==========================
+
+    if (togglePassword) {
+
+        togglePassword.addEventListener("click", function () {
+
+            if (password.type === "password") {
+
+                password.type = "text";
+                this.classList.remove("fa-eye");
+                this.classList.add("fa-eye-slash");
+
+            } else {
+
+                password.type = "password";
+                this.classList.remove("fa-eye-slash");
+                this.classList.add("fa-eye");
+
+            }
+
+        });
+
+    }
+
+    // ==========================
+    // Form Validation
+    // ==========================
+
+    form.addEventListener("submit", function (e) {
+
+        e.preventDefault();
+
+        const fullName = document.querySelector("input[type='text']").value.trim();
+        const email = document.querySelector("input[type='email']").value.trim();
+        const phone = document.querySelector("input[type='tel']").value.trim();
+        const city = document.querySelectorAll("input[type='text']")[1].value.trim();
+        const terms = document.querySelector("input[type='checkbox']");
+
+        // Full Name
+
+        if (fullName === "") {
+
+            alert("Please enter your full name.");
+            return;
+
+        }
+
+        // Email
+
+        if (email === "") {
+
+            alert("Please enter your email.");
+            return;
+
+        }
+
+        // Phone
+
+        if (phone.length < 11) {
+
+            alert("Enter a valid phone number.");
+            return;
+
+        }
+
+        // City
+
+        if (city === "") {
+
+            alert("Please enter your city.");
+            return;
+
+        }
+
+        // Password
+
+        if (password.value.length < 8) {
+
+            alert("Password must be at least 8 characters.");
+            return;
+
+        }
+
+        // Confirm Password
+
+        if (password.value !== confirmPassword.value) {
+
+            alert("Passwords do not match.");
+            return;
+
+        }
+
+        // Terms
+
+        if (!terms.checked) {
+
+            alert("Please accept Terms & Conditions.");
+            return;
+
+        }
+
+        // Success
+
+        alert("Account Created Successfully!");
+
+        // Redirect
+
+        window.location.href = "customer.html";
+
+    });
+
+});
+</script>
+
+</body>
+</html>
+```

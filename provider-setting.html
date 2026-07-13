@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Provider Settings</title>
+<style>
+    /* =========================
+   PROVIDER SETTING CSS
+========================= */
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+
+body{
+
+    background:#f5f7fb;
+
+}
+
+
+
+/* Header */
+
+header{
+
+    width:100%;
+    height:70px;
+
+    background:#2a9085;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 50px;
+
+    color:white;
+
+}
+
+
+
+.logo{
+
+    font-size:28px;
+    font-weight:bold;
+
+}
+
+
+
+nav a{
+
+    color:white;
+    text-decoration:none;
+
+    margin-left:25px;
+
+    font-size:16px;
+
+}
+
+
+
+nav a:hover{
+
+    color:#ffe082;
+
+}
+
+
+
+/* Settings Page */
+
+
+.settings-page{
+
+    width:80%;
+    margin:40px auto;
+
+}
+
+
+
+.settings-page h1{
+
+    font-size:35px;
+    color:#333;
+
+    margin-bottom:10px;
+
+}
+
+
+
+.settings-page > p{
+
+    color:#777;
+    margin-bottom:30px;
+
+}
+
+
+
+
+/* Settings List */
+
+
+.settings-list{
+
+    background:white;
+
+    border-radius:15px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+
+    overflow:hidden;
+
+}
+
+
+
+
+/* Setting Item */
+
+
+.setting-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:25px 30px;
+
+    border-bottom:1px solid #eee;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+}
+
+
+
+.setting-item:hover{
+
+    background:#f0fdfb;
+
+}
+
+
+
+.setting-item h3{
+
+    color:#333;
+
+    font-size:20px;
+
+    margin-bottom:8px;
+
+}
+
+
+
+.setting-item p{
+
+    color:#777;
+
+    font-size:14px;
+
+}
+
+
+
+.setting-item span{
+
+    font-size:35px;
+
+    color:#2a9085;
+
+}
+
+
+
+
+/* Logout */
+
+.logout h3{
+
+    color:#e53935;
+
+}
+
+
+
+.logout span{
+
+    color:#e53935;
+
+}
+
+
+
+
+/* Responsive */
+
+@media(max-width:768px){
+
+
+    header{
+
+        flex-direction:column;
+
+        height:auto;
+
+        padding:20px;
+
+    }
+
+
+
+    nav{
+
+        margin-top:15px;
+
+    }
+
+
+
+    nav a{
+
+        margin:10px;
+
+    }
+
+
+
+    .settings-page{
+
+        width:90%;
+
+    }
+
+
+}
+</style>
+</head>
+
+
+<body>
+
+
+<!-- Header -->
+
+<header>
+
+    <div class="logo">
+        Zindagi Asan
+    </div>
+
+
+    <nav>
+        <a href="provider-dashboard.html">Dashboard</a>
+
+        <a href="provider-reviews.html">Reviews</a>
+        <a href="provider-setting.html">Settings</a>
+    </nav>
+
+</header>
+
+
+
+
+<!-- Settings Page -->
+
+<section class="settings-page">
+
+
+    <h1>
+        ⚙️ Settings
+    </h1>
+
+    <p>
+        Manage your account and preferences
+    </p>
+
+
+
+    <div class="settings-list">
+
+
+        <div class="setting-item">
+
+            <div>
+                <h3>Profile Settings</h3>
+                <p>Edit your personal information</p>
+            </div>
+
+            <span>›</span>
+
+        </div>
+
+
+
+        <div class="setting-item">
+
+            <div>
+                <h3>Change Password</h3>
+                <p>Update your account password</p>
+            </div>
+
+            <span>›</span>
+
+        </div>
+
+
+
+        <div class="setting-item">
+
+            <div>
+                <h3>Notifications</h3>
+                <p>Manage your alerts and messages</p>
+            </div>
+
+            <span>›</span>
+
+        </div>
+
+
+
+        <div class="setting-item">
+
+            <div>
+                <h3>Privacy & Security</h3>
+                <p>Manage your account security</p>
+            </div>
+
+            <span>›</span>
+
+        </div>
+
+
+
+        <div class="setting-item">
+
+            <div>
+                <h3>Help & Support</h3>
+                <p>Get help when you need it</p>
+            </div>
+
+            <span>›</span>
+
+        </div>
+
+
+
+        <div class="setting-item logout">
+
+            <div>
+                <h3>Logout</h3>
+                <p>Sign out from your account</p>
+            </div>
+
+            <span>›</span>
+
+        </div>
+
+
+
+    </div>
+
+
+</section>
+
+
+
+<script >
+/* =========================
+   PROVIDER SETTING JS
+========================= */
+
+
+let settingItems = document.querySelectorAll(".setting-item");
+
+
+
+// Profile Settings
+
+settingItems[0].addEventListener("click", function(){
+
+    window.location.href = "edit-profile.html";
+
+});
+
+
+
+
+// Change Password
+
+settingItems[1].addEventListener("click", function(){
+
+    window.location.href = "change-password.html";
+
+});
+
+
+
+
+// Notifications
+
+settingItems[2].addEventListener("click", function(){
+
+    window.location.href = "notifications.html";
+
+});
+
+
+
+
+// Privacy & Security
+
+settingItems[3].addEventListener("click", function(){
+
+    window.location.href = "privacy-security.html";
+
+});
+
+
+
+
+// Help & Support
+
+settingItems[4].addEventListener("click", function(){
+
+    window.location.href = "help-support.html";
+
+});
+
+
+
+
+// Logout
+
+settingItems[5].addEventListener("click", function(){
+
+
+    let logout = confirm("Are you sure you want to logout?");
+
+
+    if(logout){
+
+        window.location.href = "provider-logout.html";
+
+    }
+
+
+});
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Job Seeker Login | Zindagi Asan</title>
+
+<style>
+    /*====================================
+        ZINDAGI ASAN
+     JOB SEEKER LOGIN CSS
+====================================*/
+
+/* Google Font */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    background:#f5f7fb;
+
+    color:#333;
+
+}
+
+/*=========================
+        NAVBAR
+==========================*/
+
+.navbar{
+
+    width:100%;
+
+    height:75px;
+
+    background:#fff;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 80px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+}
+
+.logo{
+
+    font-size:30px;
+
+    font-weight:700;
+
+    color:#0F9D58;
+
+}
+
+.logo span{
+
+    color:#FFD54F;
+
+}
+
+.navbar ul{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:35px;
+
+}
+
+.navbar ul li a{
+
+    text-decoration:none;
+
+    color:#333;
+
+    font-size:16px;
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+.navbar ul li a:hover{
+
+    color:#0F9D58;
+
+}
+
+
+/*=========================
+      LOGIN SECTION
+==========================*/
+
+.login-section{
+
+    min-height:calc(100vh - 75px);
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+}
+
+
+/*=========================
+        LEFT SIDE
+==========================*/
+
+.left-side{
+
+    background:linear-gradient(135deg,#0F9D58,#1565C0);
+
+    color:white;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:60px;
+
+    text-align:center;
+
+}
+
+.left-side h1{
+
+    font-size:55px;
+
+    margin-bottom:25px;
+
+}
+
+.left-side p{
+
+    font-size:18px;
+
+    line-height:32px;
+
+    max-width:500px;
+
+}
+
+
+/*=========================
+       RIGHT SIDE
+==========================*/
+
+.right-side{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:50px;
+
+}
+
+.login-form{
+
+    width:100%;
+
+    max-width:480px;
+
+    background:#fff;
+
+    padding:45px;
+
+    border-radius:20px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.12);
+
+}
+
+.login-form h2{
+
+    font-size:34px;
+
+    margin-bottom:10px;
+
+}
+
+.login-form p{
+
+    color:#666;
+
+    margin-bottom:30px;
+
+}
+/*=========================
+      INPUT FIELDS
+==========================*/
+
+.input-group{
+
+    margin-bottom:22px;
+
+}
+
+.input-group label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-weight:500;
+
+    color:#333;
+
+}
+
+.input-box{
+
+    position:relative;
+
+}
+
+.input-box input{
+
+    width:100%;
+
+    height:55px;
+
+    border:1px solid #dcdcdc;
+
+    border-radius:12px;
+
+    padding:0 45px;
+
+    font-size:15px;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+.input-box input:focus{
+
+    border-color:#0F9D58;
+
+    box-shadow:0 0 8px rgba(15,157,88,.25);
+
+}
+
+.input-box .fa-envelope,
+.input-box .fa-lock{
+
+    position:absolute;
+
+    left:16px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    color:#888;
+
+}
+
+#togglePassword{
+
+    position:absolute;
+
+    right:18px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    cursor:pointer;
+
+    color:#777;
+
+}
+
+
+/*=========================
+     REMEMBER SECTION
+==========================*/
+
+.remember-box{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+    font-size:14px;
+
+}
+
+.remember-box label{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+}
+
+.remember-box a{
+
+    text-decoration:none;
+
+    color:#1565C0;
+
+    font-weight:500;
+
+}
+
+.remember-box a:hover{
+
+    text-decoration:underline;
+
+}
+
+
+/*=========================
+      LOGIN BUTTON
+==========================*/
+
+.login-btn{
+
+    width:100%;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#0F9D58;
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.login-btn:hover{
+
+    background:#0b8043;
+
+    transform:translateY(-2px);
+
+}
+
+
+/*=========================
+        DIVIDER
+==========================*/
+
+.divider{
+
+    text-align:center;
+
+    margin:25px 0;
+
+    color:#999;
+
+    font-size:14px;
+
+    position:relative;
+
+}
+
+.divider::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:50%;
+
+    width:42%;
+
+    height:1px;
+
+    background:#ddd;
+
+}
+
+.divider::after{
+
+    content:"";
+
+    position:absolute;
+
+    right:0;
+
+    top:50%;
+
+    width:42%;
+
+    height:1px;
+
+    background:#ddd;
+
+}
+
+
+/*=========================
+      SIGNUP LINK
+==========================*/
+
+.signup-link{
+
+    text-align:center;
+
+    font-size:15px;
+
+}
+
+.signup-link a{
+
+    color:#1565C0;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+}
+
+.signup-link a:hover{
+
+    text-decoration:underline;
+
+}
+
+</style>
+
+    <!-- Google Font -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ===========================
+            NAVBAR
+=========================== -->
+
+<header class="navbar">
+
+    <div class="logo">
+
+        Zindagi <span style="color: #FFD54F;">Asan</span>
+
+    </div>
+
+    <ul>
+
+        <li><a href="welcome.html">Home</a></li>
+
+        <li><a href="customer.html">Customer</a></li>
+
+        <li><a href="about.html">About</a></li>
+
+        <li><a href="contact.html">Contact</a></li>
+
+    </ul>
+
+</header>
+
+<!-- ===========================
+        LOGIN SECTION
+=========================== -->
+
+<section class="login-section">
+
+    <!-- Left Side -->
+
+    <div class="left-side">
+
+        <h1>Welcome Back!</h1>
+
+        <p>
+
+            Login as a Job Seeker and connect with customers to grow your work through Zindagi Asan.
+
+        </p>
+
+    </div>
+
+    <!-- Right Side -->
+
+    <div class="right-side">
+
+        <form id="loginForm" class="login-form">
+
+            <h2>Job Seeker Login</h2>
+
+            <p>
+
+                Sign in to continue.
+
+            </p>
+
+            <!-- Email -->
+
+            <div class="input-group">
+
+                <label>Email Address</label>
+
+                <div class="input-box">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email"
+                        required>
+
+                </div>
+
+            </div>
+
+            <!-- Password -->
+
+            <div class="input-group">
+
+                <label>Password</label>
+
+                <div class="input-box">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter password"
+                        required>
+
+                    <i
+                        class="fa-solid fa-eye"
+                        id="togglePassword">
+                    </i>
+
+                </div>
+
+            </div>
+                        <!-- Remember Me -->
+
+            <div class="remember-box">
+
+                <label>
+
+                    <input type="checkbox">
+
+                    Remember Me
+
+                </label>
+
+                <a href="forgot-password.html">
+
+                    Forgot Password?
+
+                </a>
+
+            </div>
+
+
+
+            <!-- Login Button -->
+
+            <button
+                type="submit"
+                class="login-btn">
+
+                Login
+
+            </button>
+
+
+
+            <!-- Divider -->
+
+            <div class="divider">
+
+                <span>OR</span>
+
+            </div>
+
+
+
+            <!-- Signup -->
+
+            <div class="signup-link">
+
+                <p>
+
+                    Don't have an account?
+
+                    <a href="jobseeker-sginup.html">
+
+                        Create Account
+
+                    </a>
+
+                </p>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+<script>
+    // ===============================
+// ZINDAGI ASAN - JOB SEEKER LOGIN
+// ===============================
+
+
+// ===============================
+// Password Show / Hide
+// ===============================
+
+const password = document.getElementById("password");
+
+const togglePassword = document.getElementById("togglePassword");
+
+togglePassword.addEventListener("click", function () {
+
+    if (password.type === "password") {
+
+        password.type = "text";
+
+        togglePassword.classList.remove("fa-eye");
+        togglePassword.classList.add("fa-eye-slash");
+
+    }
+
+    else {
+
+        password.type = "password";
+
+        togglePassword.classList.remove("fa-eye-slash");
+        togglePassword.classList.add("fa-eye");
+
+    }
+
+});
+
+
+
+// ===============================
+// Login Validation
+// ===============================
+
+const loginForm = document.getElementById("loginForm");
+
+loginForm.addEventListener("submit", function (e) {
+
+    e.preventDefault();
+
+    const email = document.getElementById("email").value.trim();
+
+    const pass = document.getElementById("password").value.trim();
+
+
+
+    if (email === "") {
+
+        alert("Please enter your email.");
+
+        return;
+
+    }
+
+
+
+    if (!email.includes("@")) {
+
+        alert("Please enter a valid email.");
+
+        return;
+
+    }
+
+
+
+    if (pass.length < 8) {
+
+        alert("Password must be at least 8 characters.");
+
+        return;
+
+    }
+
+
+
+    alert("Login Successful!");
+
+
+
+    // Redirect
+
+    window.location.href = "provider-dashboard.html";
+
+});
+</script>
+
+</body>
+
+</html>

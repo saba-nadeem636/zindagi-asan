@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailor Profile</title>
+
+</head>
+
+<body>
+    <style>
+        *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+
+body{
+    background:#f5f5f5;
+}
+
+
+/* Profile */
+
+.profile{
+    width:80%;
+    margin:50px auto;
+    background:white;
+    padding:40px;
+    display:flex;
+    align-items:center;
+    gap:30px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+
+.profile img{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+}
+
+
+.profile h2{
+    color:#2a9085;
+    margin-bottom:10px;
+}
+
+
+.profile p{
+    margin:8px 0;
+}
+
+
+button{
+    margin-top:15px;
+    padding:12px 25px;
+    background:#2a9085;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+
+button:hover{
+    background:#207067;
+}
+
+
+
+/* Popup */
+
+.contact-popup{
+
+    display:none;
+
+    position:fixed;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:350px;
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:15px;
+
+    text-align:center;
+
+    box-shadow:0 5px 25px rgba(0,0,0,0.3);
+
+}
+
+
+.contact-popup h2{
+    color:#2a9085;
+    margin-bottom:20px;
+}
+
+
+.contact-popup p{
+    margin:12px 0;
+}
+    </style>
+
+    <section class="profile">
+
+        <img src="https://via.placeholder.com/150" alt="Tailor">
+
+        <div>
+            <h2>Ali Tailors</h2>
+            <p>Professional Tailor</p>
+            <p>Experience: 5 Years</p>
+
+            <button onclick="showContact()">Contact Now</button>
+        </div>
+
+    </section>
+
+
+    <!-- Contact Popup -->
+
+    <div id="contactBox" class="contact-popup">
+
+        <h2>Tailor Details</h2>
+
+        <p><b>Name:</b> Ali Tailors</p>
+        <p><b>Phone:</b> 0300-1234567</p>
+        <p><b>Location:</b> Karachi</p>
+        <p><b>Timing:</b> 10 AM - 8 PM</p>
+
+        <button onclick="closeContact()">Close</button>
+
+    </div>
+
+
+    <script>
+        function showContact(){
+
+    document.getElementById("contactBox").style.display="block";
+
+}
+
+
+function closeContact(){
+
+    document.getElementById("contactBox").style.display="none";
+
+}
+</script>
+
+</body>
+</html>

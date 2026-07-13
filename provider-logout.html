@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Logout | Zindagi Asan</title>
+
+<style>
+    *{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:#f4f7fc;
+}
+
+.logout-box{
+background:#fff;
+padding:40px;
+width:420px;
+text-align:center;
+border-radius:15px;
+box-shadow:0 5px 20px rgba(0,0,0,.1);
+}
+
+.logout-box i{
+font-size:60px;
+color:#2a9085;
+margin-bottom:20px;
+}
+
+.logout-box h2{
+color:#2a9085;
+margin-bottom:15px;
+}
+
+.logout-box p{
+color:#666;
+margin-bottom:30px;
+font-size:18px;
+}
+
+.buttons{
+display:flex;
+justify-content:center;
+gap:20px;
+}
+
+button{
+padding:12px 25px;
+border:none;
+border-radius:8px;
+font-size:16px;
+cursor:pointer;
+transition:.3s;
+}
+
+#yesBtn{
+background:#2a9085;
+color:white;
+}
+
+#yesBtn:hover{
+background:#1d6f67;
+}
+
+#noBtn{
+background:#ddd;
+}
+
+#noBtn:hover{
+background:#bbb;
+}
+</style>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="logout-box">
+
+<i class="fas fa-sign-out-alt"></i>
+
+<h2>Logout</h2>
+
+<p>Are you sure you want to logout?</p>
+
+<div class="buttons">
+
+<button id="yesBtn">Yes, Logout</button>
+
+<button id="noBtn">Cancel</button>
+
+</div>
+
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const yesBtn = document.getElementById("yesBtn");
+    const noBtn = document.getElementById("noBtn");
+
+    // Logout
+    yesBtn.addEventListener("click", function () {
+
+        alert("Logout Successful!");
+
+        // Apni login ya welcome page ka naam yahan likho
+        window.location.href = "welcome.html";
+
+    });
+
+    // Cancel
+    noBtn.addEventListener("click", function () {
+
+        window.location.href = "provider-dashboard.html";
+
+    });
+
+});
+</script>
+
+</body>
+</html>
